@@ -1,0 +1,2 @@
+{% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+<li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>

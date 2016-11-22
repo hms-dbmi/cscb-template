@@ -1,0 +1,20 @@
+{% capture id %}{{ section.id | remove:'/' | downcase }}{% endcapture %}
+<div id="{{id}}" class="section p-{{id}}">
+{% if section.icon %}
+    <div class="subtlecircle sectiondivider imaged">
+        <img src="{{section.icon}}" alt="section icon" />
+        <h5 class="icon-title">{{ section.title }}</h5>
+    </div>
+{% elsif section.fa-icon %}
+    <div class="subtlecircle sectiondivider faicon">
+        <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-{{ section.fa-icon }} fa-stack-1x"></i>
+        </span>
+        <h5 class="icon-title">{{ section.title }}</h5>
+    </div>
+{% endif %}
+    <div class="container {{ section.style }}">
+        {{ section.content }}
+    </div>
+</div>
