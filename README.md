@@ -18,3 +18,15 @@ To create an **About** 'SinglePaged' page and include in top menu:
 ### Other (non-SinglePaged) Pages
 
 If need to create a plain page (not SinglePaged) with own HTML (or Markdown) layout, create it similarly to `about.html` in example but replace contents (perhaps with exception of wrapper-foot.html and wrapper-head.html) with own markup. (Not final:) Modify `_includes/top-nav.html` manually to add new page as a menu item, or create a dummy 'collection' for it in `_config.yml`.
+
+### Posts & News Items
+
+The default `posts` collection is not used for the primary pages/sections and may be used for showing news or blog posts within other page/section templates, e.g. in some section or page content file:
+```liquid
+{% for post in site.posts %}
+  <div class="news-post">
+    <h6>Posted on {{ post.date }}</h6>
+    {{ post.content }}
+  </div>
+{% endfor %}
+```
