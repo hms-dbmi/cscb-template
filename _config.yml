@@ -37,6 +37,11 @@ colors:
 kramdown:
   auto_ids:  false
 
+# Setup pages
 collections:
-  - home
-  - about
+  home:
+    order: 0
+  about:
+    order: 1
+  team:
+    order: 4

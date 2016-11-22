@@ -109,14 +109,15 @@ $(document).ready(function (){
         }
     }
 
-    var pageNav = $('nav#pageNav');
-    var sectionNav = $('nav#sectionNav');
+    var pageNav = $('nav#pageNav'),
+        sectionNav = $('nav#sectionNav'),
+        pageWrapper = $('#main');
 
     var throttledScrollHandler = throttle(function(){
         if (window.document.body.scrollTop > pageNav.height()){
-            sectionNav[0].style.top = '0px';
+            pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
         } else {
-            sectionNav[0].style.top = '';
+            pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
         }
     }, 100, true);
 

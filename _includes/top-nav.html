@@ -1,9 +1,10 @@
-<nav id="pageNav">
+<nav id="pageNav" class="fixed-nav">
     <ul>
-        {% for collection in site.collections %}
+        {% assign sorted_collections = site.collections | sort: "order" %}
+        {% for collection in sorted_collections %}
           {% unless collection.label == 'posts' %}
             {% if collection.label == 'home' %}
-              {% assign href = '/' %}
+              {% assign href = '/' | relative_url %}
             {% else %}
               {% assign href = collection.label | relative_url %}
             {% endif %}
