@@ -1,0 +1,17 @@
+---
+title: "News"
+bg: blue
+color: white
+collection : about
+fa-icon: newspaper-o
+---
+
+<h1 class="left no-side-padding">Latest News</h1>
+
+<div id="newsBlock">
+    {% for post in site.posts %}
+        <div class="news-item">
+            {{ post }}
+        </div>
+    {% endfor %}
+</div>

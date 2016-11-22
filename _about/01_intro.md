@@ -1,7 +1,7 @@
 ---
 title: "About"
-bg: white
-color: black
+bg: blue
+color: white
 style: center
 collection : about
 ---

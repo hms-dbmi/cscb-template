@@ -39,13 +39,18 @@ hr {
 }
 
 .container { word-wrap: break-word; }
-.center { text-align: center; }
-.left, .container .left { text-align: left; }
+.center { text-align: center !important; }
+.left, .container .left { text-align: left !important; }
 
 .container h1, .container h2, .container h3, .container h4 {
   margin-bottom: 20px;
-  text-align: center;
   padding: 0 4%;
+}
+.single-page-section.container > h1, 
+.single-page-section.container > h2, 
+.single-page-section.container > h3, 
+.single-page-section.container > h4 {
+  text-align: center;
 }
 .container p, .container ol, .container ul {
   font-size: 17px;
@@ -54,6 +59,26 @@ hr {
 .container ol, .container ul { padding: 0 8%; }
 .container p:first-of-type {
     margin-top: 40px;
+}
+
+.no-side-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.container .news-item h1,
+.container .news-item h2,
+.container .news-item h3,
+.container .news-item h4,
+.container .news-item p {
+  padding-left: 0;
+  padding-right:0;
+}
+
+.container .news-item ol,
+.container .news-item ul {
+  padding-left: 20px;
+  padding-right:0;
 }
 
 /* keep embedded videos fluid! */

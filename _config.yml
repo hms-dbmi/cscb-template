@@ -43,5 +43,5 @@ collections:
     order: 0
   about:
     order: 1
-  team:
-    order: 4
+  #team:
+  #  order: 4
