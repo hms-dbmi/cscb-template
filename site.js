@@ -72,7 +72,7 @@ $.extend($.easing,
 
 $(document).ready(function (){
 
-    $('nav li a').navScroller();
+    $('nav#sectionNav li a').navScroller();
 
     //section divider icon click gently scrolls to reveal the section
 	$(".sectiondivider").on('click', function(event) {
@@ -90,6 +90,37 @@ $(document).ready(function (){
             });
         }
 	});
+
+    function throttle(func, wait, tail) {
+        var time = Date.now();
+        var timeout = null;
+        return function() {
+            var expire = time + wait - Date.now();
+            if (expire < 0) {
+                func();
+                time = Date.now();
+                if (timeout !== null){
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+            } else if (tail) {
+                timeout = setTimeout(func, expire);
+            }
+        }
+    }
+
+    var pageNav = $('nav#pageNav');
+    var sectionNav = $('nav#sectionNav');
+
+    var throttledScrollHandler = throttle(function(){
+        if (window.document.body.scrollTop > pageNav.height()){
+            sectionNav[0].style.top = '0px';
+        } else {
+            sectionNav[0].style.top = '';
+        }
+    }, 100, true);
+
+    $(window).on('scroll', throttledScrollHandler);
 
 });
 

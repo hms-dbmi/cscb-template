@@ -1,14 +1,7 @@
 ---
 permalink: about
 ---
-{% include wrapper-head.html title="About" %}
-
-    <nav>
-      <ul>
-      {% for node in site.home %}{% include section-nav-item.html %}{% endfor %}
-      </ul>
-    </nav>
-
-    {% for section in site.home %}{% include section.html %}{% endfor %}
-
+{% include wrapper-head.html %}
+{% include top-nav.html %}
+{% include single-page-template.html collection=site.about %}
 {% include wrapper-foot.html %}

@@ -1,13 +1,6 @@
 ---
 ---
 {% include wrapper-head.html %}
-
-    <nav>
-      <ul>
-      {% for node in site.home %}{% include section-nav-item.html %}{% endfor %}
-      </ul>
-    </nav>
-
-    {% for section in site.home %}{% include section.html %}{% endfor %}
-
+{% include top-nav.html %}
+{% include single-page-template.html collection=site.home %}
 {% include wrapper-foot.html %}

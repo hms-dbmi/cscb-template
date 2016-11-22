@@ -1,0 +1,14 @@
+<nav id="pageNav">
+    <ul>
+        {% for collection in site.collections %}
+          {% unless collection.label == 'posts' %}
+            {% if collection.label == 'home' %}
+              {% assign href = '/' %}
+            {% else %}
+              {% assign href = collection.label | relative_url %}
+            {% endif %}
+            <li class="page-link"><a href="{{ href }}">{{collection.label}}</a></li>
+          {% endunless %}
+        {% endfor %}
+    </ul>
+</nav>
