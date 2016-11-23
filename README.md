@@ -6,18 +6,27 @@ It is created for the Center for Stem Cell Bioinformatics and may be re-used and
 
 ## Usage
 
-Instead of all content being located in the `_posts` directory and sorted & rendered out in one single page as in the original SinglePaged template, you must define your collections in `_config.yml` and create a matching folder of content files (sorted by filename) for each. Each content file must have a few parameters defined in the header which informs the style (background color), as well as which collection it is part of (slightly redundant). Each collection becomes a top-level menu item and page. Finally, must also then create a file in the root of the project directory (same level as index.html) which has a 'permalink' parameter in its header which matches the collection name, sets up page contents, and may be customized.
+Instead of all content being located in the `_posts` directory and sorted & rendered out in one single page as in the original SinglePaged template, you must define your collections, including relevant metadata fields, in `_config.yml` and create a matching folder of content files (sorted by filename) for each. The name of the collection defined becomes the page's path (URL endpoint). Each content file must have a few parameters defined in the header which informs the style (background color), as well as which collection it is part of (slightly redundant). Each collection becomes a top-level menu item and page. Finally, must also then create a file, preferably but not mandatorily in the `/pages/` directory, which has a `permalink` parameter in its header which matches the collection name and includes this snippet : `{% include full-page-template.html %}`
 
 ### Example
 
 To create an **About** 'SinglePaged' page and include in top menu:
-- Define `about` -- including a value for `order` to inform position in menu -- under the `collections` configuration option in `_config.yml`. 
+- In `_config.yml`, list `about` under the `collections` configuration option in `_config.yml`. Include any relevant metadata parameters such as `color` (for color in top menu), `order` (of which menu item appears in top menu), and `title` (if collection name has spaces, which cannot be used in the label). 
 - Create & populate an `_about` folder with content files which have `collection : about` in the header, plus any metadata applicable to the SinglePaged template (title, colors, icon, etc.).
-- Create `about.html` in root directory (same level as `index.html`) with the same contents as in `index.html`, swapping out collection to render and page title, and adding `permalink: about` to the header between the 2 3-dash lines. Customize with own layout if needed.
+- Create `about.html` in `pages/` directory with the following contents:  
+
+  ```liquid
+  ---
+  permalink: about
+  ---
+  {% include full-page-template.html %}
+  ```
+  If want to use a different layout or template instead of SinglePaged, simply replace the full-page-template include with own markup.
+
 
 ### Other (non-SinglePaged) Pages
 
-If need to create a plain page (not SinglePaged) with own HTML (or Markdown) layout, create it similarly to `about.html` in example but replace contents (perhaps with exception of wrapper-foot.html and wrapper-head.html) with own markup. (Not final:) Modify `_includes/top-nav.html` manually to add new page as a menu item, or create a dummy 'collection' for it in `_config.yml`.
+If need to create a plain page (not SinglePaged) with own HTML (or Markdown) layout, create it similarly to `about.html` in example above but replace contents (perhaps with exception of wrapper-foot.html and wrapper-head.html) with own markup.
 
 ### Posts & News Items
 
