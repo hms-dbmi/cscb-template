@@ -8,8 +8,10 @@ collection : stem-cell-commons
 
 ### Search for and
 {:.left.minus-left.no-margin-bottom}
+
 # Discover
 {:.left.no-margin.text-600}
+
 ### Over 200 Stem Cell-related Data Sets
 {:.left.minus-right}
 

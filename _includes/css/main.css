@@ -292,9 +292,7 @@ nav ul li a:hover {
 }
 
 nav#pageNav ul li:hover, 
-nav#pageNav ul li.active {
-  padding-bottom: 0;
-}
+nav#pageNav ul li.active,
 nav#sectionNav ul li:hover, 
 nav#sectionNav ul li.active {
   padding-top: 0;

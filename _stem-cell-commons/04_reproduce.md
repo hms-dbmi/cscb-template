@@ -8,8 +8,10 @@ collection : stem-cell-commons
 
 ### Access Tools that Allow You to
 {:.left.minus-left.no-margin-bottom}
+
 # Reproduce
 {:.left.no-margin.text-600}
+
 ### Studies and Document Findings
 {:.left.minus-right}
 

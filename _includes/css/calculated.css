@@ -30,7 +30,7 @@
 
 {% assign navborder = 3 %}
 {% assign navborder_active = 6 %}
-
+/**
 nav#pageNav ul li {
   border-bottom:{{navborder}}px solid;
   padding: {{navborder}}px;
@@ -40,12 +40,16 @@ nav#pageNav ul li:hover,
 nav#pageNav ul li.active {
   border-bottom-width: {{navborder_active}}px;
 }
+**/
 
+nav#pageNav ul li,
 nav#sectionNav ul li {
   border-top:{{navborder}}px solid;
   padding: {{navborder}}px;
 }
 
+nav#pageNav ul li:hover, 
+nav#pageNav ul li.active,
 nav#sectionNav ul li:hover, 
 nav#sectionNav ul li.active {
   border-top-width: {{navborder_active}}px;
