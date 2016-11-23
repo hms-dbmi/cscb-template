@@ -23,12 +23,14 @@ touch_icon:  "img/apple-touch-icon.png"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
 
 
-### template colors, used site-wide via css ###
+### Pre-defined template color 'shortcuts', use in SinglePaged page/section page headers
+### Or, may use hex representation directly (if want to use different color)
 colors:
   black:        '#111111'
   white:        '#f8f8f8'
   blue:         '#49a7e9'
   bluedark:     '#3892d2'
+  bluebrighter: '#24a5ff'
   green:        '#9bcf2f'
   purple:       '#c869bf'
   orange:       '#fab125'
@@ -37,11 +39,28 @@ colors:
 kramdown:
   auto_ids:  false
 
-# Setup pages
+### Setup SinglePaged pages comprised of collections' sections.
+### Required meta-fields: 
+###   order (order to appear in top nav)
+### Optional meta-fields : 
+###   color (for top nav border)
+###   title (in case has spaces (not supported by label))
 collections:
   home:
     order: 0
+    color: orange
   about:
     order: 1
+    color: bluedark
+  stem-cell-commons:
+    order: 2 
+    title: "Stem Cell Commons"
+    color: blue
+  training:
+    order: 3
+    color: green
+  consulting:
+    order: 4
+    color: purple
   #team:
-  #  order: 4
+  #  order: 5

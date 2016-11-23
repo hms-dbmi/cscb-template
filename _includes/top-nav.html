@@ -8,8 +8,17 @@
             {% else %}
               {% assign href = collection.label | relative_url %}
             {% endif %}
-            <li class="page-link"><a href="{{ href }}">{{collection.label}}</a></li>
+            {% if collection.title %}
+              {% assign title = collection.title %}
+            {% else %}
+              {% assign title = collection.label %}
+            {% endif %}
+            <li class="page-link t-{{collection.label}}{% if include.currentPage == collection.label %} active{% endif %}">
+              <a href="{{ href }}">{{ title }}</a>
+            </li>
           {% endunless %}
         {% endfor %}
     </ul>
 </nav>
+
+{{ include.currentPage | inspect }}

@@ -113,6 +113,7 @@ $(document).ready(function (){
         sectionNav = $('nav#sectionNav'),
         pageWrapper = $('#main');
 
+    // Hide top menu when scrolling down page (more screen space; transition w/ CSS3)
     var throttledScrollHandler = throttle(function(){
         if (window.document.body.scrollTop > pageNav.height()){
             pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
@@ -121,7 +122,18 @@ $(document).ready(function (){
         }
     }, 100, true);
 
-    $(window).on('scroll', throttledScrollHandler);
+    // Adjust top padding when menu items elide on smaller-width screens.
+    var throttledResizeHandler = throttle(function(){
+        pageWrapper[0].style.paddingTop = (sectionNav.height() - 70) + pageNav.height() + 'px';
+    }, 300, true);
+
+    $(window)
+    .on('scroll', throttledScrollHandler)
+    .on('resize', throttledResizeHandler);
+
+    // Do initial layout calcs.
+    throttledResizeHandler();
+    throttledScrollHandler();
 
 });
 

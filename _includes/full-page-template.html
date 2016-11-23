@@ -1,0 +1,5 @@
+{% assign currentCollection=site[page.permalink] %}
+{% include wrapper-head.html %}
+{% include top-nav.html currentPage=page.permalink %}
+{% include single-paged-template.html collection=currentCollection %}
+{% include wrapper-foot.html %}

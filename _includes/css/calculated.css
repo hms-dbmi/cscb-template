@@ -8,34 +8,45 @@
 {% endfor %}
 
 /* ----- per-post colors! ----- */
-{% for section in site.collections %}
-  {% for node in site[section.label] %}
+{% for collection in site.collections %}
+  {% if collection.color %}
+    {% capture pbg %}
+      {% if site.colors[collection.color] %}{{ site.colors[collection.color] }}{% else %}{{ collection.color }}{% endif %}
+    {% endcapture %}
+    nav#pageNav .t-{{collection.label}} { border-color: {{pbg}}; }
+  {% endif %}
+  {% for node in site[collection.label] %}
     {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
     {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
     {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
-    nav .p-{{id}} { border-color: {{ bg }}; }
+    nav#sectionNav .p-{{id}} { border-color: {{ bg }}; }
     #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
     #{{id}} a { color: {{ fg }}; }
     #{{id}} .sectiondivider { color: {{ bg }}; }
+    #{{id}} hr { border-color: {{ fg }}; }
   {% endfor %}
 {% endfor %}
 
 
-hr {
-  margin:60px auto;
-  width:50%;
-  border-color: {{ site.colors.black }};
-}
-
 {% assign navborder = 3 %}
 {% assign navborder_active = 6 %}
 
-nav ul li {
+nav#pageNav ul li {
+  border-bottom:{{navborder}}px solid;
+  padding: {{navborder}}px;
+}
+
+nav#pageNav ul li:hover, 
+nav#pageNav ul li.active {
+  border-bottom-width: {{navborder_active}}px;
+}
+
+nav#sectionNav ul li {
   border-top:{{navborder}}px solid;
   padding: {{navborder}}px;
 }
 
-nav ul li:hover, 
-nav ul li.active {
+nav#sectionNav ul li:hover, 
+nav#sectionNav ul li.active {
   border-top-width: {{navborder_active}}px;
 }

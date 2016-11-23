@@ -11,7 +11,7 @@ fa-icon: newspaper-o
 <div id="newsBlock">
     {% for post in site.posts %}
         <div class="news-item">
-            {{ post }}
+            {{ post.content }}
         </div>
     {% endfor %}
 </div>
