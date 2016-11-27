@@ -1,5 +1,9 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
+body {
+  background-color: #333; 
+  /* Match nav colors so doesn't show empty white space/bg on touch screens when swipe past doc body height */
+}
 
 /* ----- code, syntax highlighting, etc ----- */
 
@@ -55,6 +59,7 @@ hr {
 
 .center { text-align: center !important; }
 .left, .container .left { text-align: left !important; }
+.uppercase { text-transform: uppercase; }
 
 .no-margin,  .no-margin-bottom  { margin-bottom: 0 !important; }
 .xs-margin,  .xs-margin-bottom  { margin-bottom: 10px !important; }
@@ -90,17 +95,32 @@ hr.extra-wide { width: 100%; }
 }
 
 @media screen and (min-width: 960px){
-  .margin-minus-left { margin-left: -45px; }
-  .margin-minus-right { margin-right: -45px; }
-  .minus-left { left: -45px; }
-  .minus-right { left: 45px; }
+  .margin-minus-left { margin-left: -30px; }
+  .margin-minus-right { margin-right: -30px; }
+  .minus-left { left: -30px; }
+  .minus-right { left: 30px; }
+  .margin-minus-left.more { margin-left: -45px; }
+  .margin-minus-right.more { margin-right: -45px; }
+  .minus-left.more { left: -45px; }
+  .minus-right.more { left: 45px; }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1000px){
   .margin-minus-left { margin-left: -60px; }
   .margin-minus-right { margin-right: -60px; }
   .minus-left { left: -60px; }
   .minus-right { left: 60px; }
+}
+
+@media screen and (min-width: 1200px){
+  .margin-minus-left { margin-left: -75px; }
+  .margin-minus-right { margin-right: -75px; }
+  .minus-left { left: -75px; }
+  .minus-right { left: 75px; }
+  .margin-minus-left.more { margin-left: -90px; }
+  .margin-minus-right.more { margin-right: -90px; }
+  .minus-left.more { left: -90px; }
+  .minus-right.more { left: 90px; }
 }
 
 /* ----- section elements ----- */
@@ -229,8 +249,8 @@ nav#sectionNav {
 }
 
 #main.navbar-show nav.fixed-nav {
-  -webkit-transition: top .4s;
-  transition: top .4s;
+  -webkit-transition: top .5s;
+  transition: top .5s;
 }
 
 nav ul {

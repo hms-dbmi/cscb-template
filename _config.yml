@@ -48,20 +48,20 @@ kramdown:
 collections:
   home:
     order: 0
-    color: bluebrighter
+    color: bluedark
   about:
     order: 1
-    color: orange
+    color: purple
   stem-cell-commons:
     order: 2 
     title: "Stem Cell Commons"
-    color: blue
+    color: bluebrighter
   training:
     order: 3
     color: green
   consulting:
     order: 4
-    color: purple
-  team:
-    order: 5
     color: turquoise
+  #team:
+  #  order: 5
+  #  color: turquoise

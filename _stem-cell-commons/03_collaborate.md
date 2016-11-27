@@ -13,7 +13,7 @@ collection : stem-cell-commons
 {:.left.no-margin.text-600}
 
 ### With your Colleagues on your Analyses
-{:.left.minus-right}
+{:.left.minus-right.no-margin-bottom}
 
 <img src="{{ 'img/screen-collaborate.jpg' | relative_url }}" />
 {:.containerized}

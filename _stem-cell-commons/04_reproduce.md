@@ -6,6 +6,9 @@ fa-icon: smile-o
 collection : stem-cell-commons
 ---
 
+<img src="{{ 'img/screen-reproduce.jpg' | relative_url }}" />
+{:.containerized.big-margin-bottom}
+
 ### Access Tools that Allow You to
 {:.left.minus-left.no-margin-bottom}
 
@@ -13,7 +16,4 @@ collection : stem-cell-commons
 {:.left.no-margin.text-600}
 
 ### Studies and Document Findings
-{:.left.minus-right}
-
-<img src="{{ 'img/screen-reproduce.jpg' | relative_url }}" />
-{:.containerized}
+{:.left.minus-right.no-margin-bottom}

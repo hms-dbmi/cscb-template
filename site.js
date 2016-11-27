@@ -12,75 +12,106 @@ $.extend($.easing,
 
 (function( $ ) {
 
-    var settings;
-    var disableScrollFn = false;
-    var navItems;
-    var navs = {}, sections = {};
+    // Attach to window object (global scope) so can use it in other & in-content scripts if need be.
+    window.throttle = function(func, wait, tail) {
+        var time = Date.now();
+        var timeout = null;
+        return function() {
+            var expire = time + wait - Date.now();
+            if (expire < 0) {
+                func.apply(func, arguments);
+                time = Date.now();
+                if (timeout !== null){
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+            } else if (tail) {
+                if (timeout !== null){
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(func.bind(func,arguments), expire);
+            }
+        }
+    }
 
-    $.fn.navScroller = function(options) {
-        settings = $.extend({
+    $.fn.navScroller = function(options, $document) {
+        var navItems = this;
+        navItems.settings = $.extend({
             scrollToOffset: 170,
             scrollSpeed: 800,
             activateParentNode: true,
         }, options );
-        navItems = this;
+        navItems.navs = {};
+        navItems.sections = {};
+        navItems.disableScrollFn = false;
+        if (!($document instanceof jQuery)) $document = $(document);
+
+        navItems.populateDestinations = function() {
+            navItems.each(function(){
+                var scrollID = $(this).attr('href').substring(1);
+                navItems.navs[scrollID] = (navItems.settings.activateParentNode)? this.parentNode : this;
+                navItems.sections[scrollID] = $(document.getElementById(scrollID)).offset().top;
+            });
+        };
+
+        navItems.activateNav = function(navID){
+            for (nav in navItems.navs) { $(navItems.navs[nav]).removeClass('active'); }
+            $(navItems.navs[navID]).addClass('active');
+        };
 
         //attatch click listeners
-    	navItems.on('click', function(event){
-    		event.preventDefault();
-            var navID = $(this).attr("href").substring(1);
-            disableScrollFn = true;
-            activateNav(navID);
-            populateDestinations(); //recalculate these!
-        	$('html,body').animate({scrollTop: sections[navID] - settings.scrollToOffset},
-                settings.scrollSpeed, "easeInOutExpo", function(){
-                    disableScrollFn = false;
+        var throttledNavClickHandler = throttle(function(event){
+            var navID = $(event.target).attr("href").substring(1);
+            navItems.disableScrollFn = true;
+            navItems.activateNav(navID);
+        	$('html,body').stop().animate({scrollTop: navItems.sections[navID] - navItems.settings.scrollToOffset},
+                navItems.settings.scrollSpeed, "easeInOutExpo", function(){
+                    navItems.disableScrollFn = false;
                 }
             );
-    	});
-
-        //populate lookup of clicable elements and destination sections
-        populateDestinations(); //should also be run on browser resize, btw
+    	}, 250, false);
+    	navItems.on('click', function(e){
+            e.preventDefault();
+            throttledNavClickHandler.call(this, e);
+        });
 
         // setup scroll listener
-        $(document).scroll(function(){
-            if (disableScrollFn) { return; }
+        var throttledScrollHandler = throttle(function(event){
+            if (navItems.disableScrollFn) { return; }
             var page_height = $(window).height();
-            var pos = $(this).scrollTop();
-            for (i in sections) {
-                if ((pos + settings.scrollToOffset >= sections[i]) && sections[i] < pos + page_height){
-                    activateNav(i);
+            var pos = $document.scrollTop();
+            for (i in navItems.sections) {
+                if ((pos + navItems.settings.scrollToOffset >= navItems.sections[i]) && navItems.sections[i] < pos + page_height){
+                    navItems.activateNav(i);
                 }
             }
-        });
+        }, 100, true);
+        $document.scroll(throttledScrollHandler);
+
+        //populate lookup of clicable elements and destination sections
+        navItems.populateDestinations(); //should also be run on browser resize, btw
+        window.requestAnimationFrame ? window.requestAnimationFrame(throttledScrollHandler) : throttledScrollHandler();
+        return navItems;
     };
 
-    function populateDestinations() {
-        navItems.each(function(){
-            var scrollID = $(this).attr('href').substring(1);
-            navs[scrollID] = (settings.activateParentNode)? this.parentNode : this;
-            sections[scrollID] = $(document.getElementById(scrollID)).offset().top;
-        });
-    }
-
-    function activateNav(navID) {
-        for (nav in navs) { $(navs[nav]).removeClass('active'); }
-        $(navs[navID]).addClass('active');
-    }
 })( jQuery );
 
 
 $(document).ready(function (){
 
-    $('nav#sectionNav li a').navScroller();
+    var $document = $(this),
+        $pageWrapper = $document.find('#main'),
+        $pageNav = $pageWrapper.find('nav#pageNav'),
+        $sectionNav = $pageWrapper.find('nav#sectionNav'),
+        $sectionNavItems = $sectionNav.find('li a').navScroller({}, $document);
 
     //section divider icon click gently scrolls to reveal the section
-	$(".sectiondivider").on('click', function(event) {
-    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
+	$pageWrapper.find(".sectiondivider").on('click', function(event) {
+    	$('html,body').stop().animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
 	});
 
     //links going to other sections nicely scroll
-	$(".container a").each(function(){
+	$pageWrapper.find(".container a").each(function(){
         if ($(this).attr("href").charAt(0) == '#'){
             $(this).on('click', function(event) {
         		event.preventDefault();
@@ -91,49 +122,84 @@ $(document).ready(function (){
         }
 	});
 
-    function throttle(func, wait, tail) {
-        var time = Date.now();
-        var timeout = null;
-        return function() {
-            var expire = time + wait - Date.now();
-            if (expire < 0) {
-                func();
-                time = Date.now();
-                if (timeout !== null){
-                    clearTimeout(timeout);
-                    timeout = null;
-                }
-            } else if (tail) {
-                timeout = setTimeout(func, expire);
+    var topNav = {
+
+        hide : function(hide){
+            if (hide){
+                $pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
+            } else {
+                $pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
             }
-        }
-    }
+        },
 
-    var pageNav = $('nav#pageNav'),
-        sectionNav = $('nav#sectionNav'),
-        pageWrapper = $('#main');
+        pastScrollOffsetAttribute : function(val){
+            if (typeof val !== undefined){
+                $pageWrapper.attr('scroll-offset-past', val);
+            } else {
+                return $pageWrapper.attr('scroll-offset-past');
+            }
+        },
 
-    // Hide top menu when scrolling down page (more screen space; transition w/ CSS3)
-    var throttledScrollHandler = throttle(function(){
-        if (window.document.body.scrollTop > pageNav.height()){
-            pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
-        } else {
-            pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
-        }
-    }, 100, true);
+        pageTopShow : true,
+        throttledScrollHandler : throttle(function(){
+            var pageScrollTop = $document.scrollTop();
+
+            // Set topNav visible if at page top
+            if (!topNav.pageTopShow && pageScrollTop < $pageNav.height()){
+                topNav.pageTopShow = true;
+                if (!topNav.hoverShow) {
+                    topNav.hide(false);
+                }
+            } else if (topNav.pageTopShow && pageScrollTop >= $pageNav.height()) {
+                topNav.pageTopShow = false;
+                if (!topNav.hoverShow) {
+                    topNav.hide(true);
+                }
+            }
+
+            if (pageScrollTop > 800) topNav.pastScrollOffsetAttribute(800);
+            else if (pageScrollTop > 700) topNav.pastScrollOffsetAttribute(700);
+            else if (pageScrollTop > 600) topNav.pastScrollOffsetAttribute(600);
+            else if (pageScrollTop > 500) topNav.pastScrollOffsetAttribute(500);
+            else if (pageScrollTop > 400) topNav.pastScrollOffsetAttribute(400);
+            else if (pageScrollTop > 300) topNav.pastScrollOffsetAttribute(300);
+            else if (pageScrollTop > 200) topNav.pastScrollOffsetAttribute(200);
+            else if (pageScrollTop > 100) topNav.pastScrollOffsetAttribute(100);
+            else topNav.pastScrollOffsetAttribute(null);
+        }, 100, true),
+
+        hoverShow : false,
+        throttledMouseMoveHandler : throttle(function(e){
+            if (!topNav.hoverShow && e.clientY < 18) {
+                topNav.hoverShow = true;
+                if (!topNav.pageTopShow){
+                    topNav.hide(false);
+                }
+            } else if (topNav.hoverShow && e.clientY > ( $pageNav.height() + $sectionNav.height() )){
+                topNav.hoverShow = false;
+                if (!topNav.pageTopShow) {
+                    topNav.hide(true);
+                }
+            }
+        }, 100, true)
+
+    };
+
 
     // Adjust top padding when menu items elide on smaller-width screens.
     var throttledResizeHandler = throttle(function(){
-        pageWrapper[0].style.paddingTop = (sectionNav.height() - 70) + pageNav.height() + 'px';
+        $pageWrapper[0].style.paddingTop = ($sectionNav.height() - 70) + $pageNav.height() + 'px';
+        $sectionNavItems.populateDestinations();
     }, 300, true);
 
-    $(window)
-    .on('scroll', throttledScrollHandler)
-    .on('resize', throttledResizeHandler);
+    $document
+    .on('resize', throttledResizeHandler)
+    .on('scroll', topNav.throttledScrollHandler)
+    .on('mousemove', topNav.throttledMouseMoveHandler);
 
     // Do initial layout calcs.
     throttledResizeHandler();
-    throttledScrollHandler();
+    topNav.throttledScrollHandler();
 
 });
 

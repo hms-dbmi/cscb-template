@@ -13,7 +13,7 @@ collection : stem-cell-commons
 {:.left.no-margin.text-600}
 
 ### Over 200 Stem Cell-related Data Sets
-{:.left.minus-right}
+{:.left.minus-right.no-margin-bottom}
 
 <img src="{{ 'img/screen-discover.jpg' | relative_url }}" />
-{:.containerized.med-margin-bottom}
+{:.containerized}

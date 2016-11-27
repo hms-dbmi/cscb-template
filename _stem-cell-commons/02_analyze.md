@@ -6,6 +6,7 @@ fa-icon: search
 collection : stem-cell-commons
 ---
 
+
 ### Import and
 {:.left.minus-left.no-margin-bottom}
 
@@ -13,7 +14,7 @@ collection : stem-cell-commons
 {:.left.no-margin.text-600}
 
 ### Your Own or Public Data Sets
-{:.left.minus-right}
+{:.left.minus-right.no-margin-bottom}
 
 <img src="{{ 'img/screen-analyze.jpg' | relative_url }}" />
 {:.containerized}
