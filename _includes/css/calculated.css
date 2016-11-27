@@ -13,7 +13,11 @@
     {% capture pbg %}
       {% if site.colors[collection.color] %}{{ site.colors[collection.color] }}{% else %}{{ collection.color }}{% endif %}
     {% endcapture %}
-    nav#pageNav .t-{{collection.label}} { border-color: {{pbg}}; }
+    nav#pageNav .t-{{collection.label}}:hover,
+    nav#pageNav .t-{{collection.label}}.active { border-color: {{ pbg }}; }
+  {% else %}
+    nav#pageNav .t-{{collection.label}}:hover,
+    nav#pageNav .t-{{collection.label}}.active { border-color: {{ site.top_nav_color_default }}; }
   {% endif %}
   {% for node in site[collection.label] %}
     {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
@@ -30,17 +34,6 @@
 
 {% assign navborder = 3 %}
 {% assign navborder_active = 6 %}
-/**
-nav#pageNav ul li {
-  border-bottom:{{navborder}}px solid;
-  padding: {{navborder}}px;
-}
-
-nav#pageNav ul li:hover, 
-nav#pageNav ul li.active {
-  border-bottom-width: {{navborder_active}}px;
-}
-**/
 
 nav#pageNav ul li,
 nav#sectionNav ul li {
