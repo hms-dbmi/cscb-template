@@ -79,9 +79,10 @@ $.extend($.easing,
             var navID = $(event.target).attr("href").substring(1);
             navItems.disableScrollFn = true;
             activateNav(navID);
-        	$('html,body').stop().animate({scrollTop: navItems.sections[navID] - navItems.settings.scrollToOffset},
+        	$('html,body').stop().animate({scrollTop: Math.max(navItems.sections[navID] - navItems.settings.scrollToOffset, 0)},
                 navItems.settings.scrollSpeed, "easeInOutExpo", function(){
                     navItems.disableScrollFn = false;
+                    navItems.settings.$document.trigger('scroll');
                 }
             );
     	}, 250, false);
@@ -131,7 +132,8 @@ $.extend($.easing,
             }
         };
 
-        var throttledScrollHandler = throttle(function(){
+        var throttledScrollHandler = throttle(function(e){
+            console.log(e);
             var pageScrollTop = $tn.settings.$document.scrollTop();
 
             // Set topNav visible if at page top
