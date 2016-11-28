@@ -34,17 +34,18 @@ $.extend($.easing,
         }
     }
 
-    $.fn.navScroller = function(options, $document) {
+    $.fn.navScroller = function(options) {
         var navItems = this;
         navItems.settings = $.extend({
             scrollToOffset: 170,
             scrollSpeed: 800,
             activateParentNode: true,
+            $document: null
         }, options );
+        if (!(navItems.settings.$document instanceof jQuery)) navItems.settings.$document = $(document);
         navItems.navs = {};
         navItems.sections = {};
         navItems.disableScrollFn = false;
-        if (!($document instanceof jQuery)) $document = $(document);
 
         navItems.populateDestinations = function() {
             navItems.each(function(){
@@ -54,7 +55,7 @@ $.extend($.easing,
             });
         };
 
-        navItems.activateNav = function(navID){
+        function activateNav(navID){
             for (nav in navItems.navs) { $(navItems.navs[nav]).removeClass('active'); }
             $(navItems.navs[navID]).addClass('active');
         };
@@ -63,7 +64,7 @@ $.extend($.easing,
         var throttledNavClickHandler = throttle(function(event){
             var navID = $(event.target).attr("href").substring(1);
             navItems.disableScrollFn = true;
-            navItems.activateNav(navID);
+            activateNav(navID);
         	$('html,body').stop().animate({scrollTop: navItems.sections[navID] - navItems.settings.scrollToOffset},
                 navItems.settings.scrollSpeed, "easeInOutExpo", function(){
                     navItems.disableScrollFn = false;
@@ -79,19 +80,83 @@ $.extend($.easing,
         var throttledScrollHandler = throttle(function(event){
             if (navItems.disableScrollFn) { return; }
             var page_height = $(window).height();
-            var pos = $document.scrollTop();
+            var pos = navItems.settings.$document.scrollTop();
             for (i in navItems.sections) {
                 if ((pos + navItems.settings.scrollToOffset >= navItems.sections[i]) && navItems.sections[i] < pos + page_height){
-                    navItems.activateNav(i);
+                    activateNav(i);
                 }
             }
         }, 100, true);
-        $document.scroll(throttledScrollHandler);
+        navItems.settings.$document.scroll(throttledScrollHandler);
 
         //populate lookup of clicable elements and destination sections
         navItems.populateDestinations(); //should also be run on browser resize, btw
         window.requestAnimationFrame ? window.requestAnimationFrame(throttledScrollHandler) : throttledScrollHandler();
         return navItems;
+    };
+
+    $.fn.topNav = function(options) {
+        var $tn = this;
+        options = $.extend({
+            initiallyOpen : true,
+            $document: null,
+            $sectionNav: null,
+            $pageWrapper: null,
+        }, options );
+        if (!(options.$document instanceof jQuery)) options.$document = $(document);
+        if (!(options.$pageWrapper instanceof jQuery)) options.$pageWrapper = $('body');
+        $tn.settings = options;
+        $tn.hoverShow = false;
+        $tn.pageTopShow = $tn.settings.initiallyOpen;
+
+        $tn.hide = function(hide){
+            if (hide){
+                $tn.settings.$pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
+            } else {
+                $tn.settings.$pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
+            }
+        };
+
+        var throttledScrollHandler = throttle(function(){
+            var pageScrollTop = $tn.settings.$document.scrollTop();
+
+            // Set topNav visible if at page top
+            if (!$tn.pageTopShow && pageScrollTop < $tn.height()){
+                $tn.pageTopShow = true;
+                if (!$tn.hoverShow) {
+                    $tn.hide(false);
+                }
+            } else if ($tn.pageTopShow && pageScrollTop >= $tn.height()) {
+                $tn.pageTopShow = false;
+                if (!$tn.hoverShow) {
+                    $tn.hide(true);
+                }
+            };
+
+        }, 100, true);
+
+        var throttledMouseMoveHandler = throttle(function(e){
+            if (!$tn.hoverShow && e.clientY < 18) {
+                $tn.hoverShow = true;
+                if (!$tn.pageTopShow){
+                    $tn.hide(false);
+                }
+            } else if ($tn.hoverShow && e.clientY > ( $tn.height() + $tn.settings.$sectionNav.height() )){
+                $tn.hoverShow = false;
+                if (!$tn.pageTopShow) {
+                    $tn.hide(true);
+                }
+            }
+        }, 100, true);
+
+        $tn.settings.$document
+        .on('scroll', throttledScrollHandler)
+        .on('mousemove', throttledMouseMoveHandler);
+
+        throttledScrollHandler();
+
+        return $tn;
+
     };
 
 })( jQuery );
@@ -101,9 +166,13 @@ $(document).ready(function (){
 
     var $document = $(this),
         $pageWrapper = $document.find('#main'),
-        $pageNav = $pageWrapper.find('nav#pageNav'),
         $sectionNav = $pageWrapper.find('nav#sectionNav'),
-        $sectionNavItems = $sectionNav.find('li a').navScroller({}, $document);
+        $sectionNavItems = $sectionNav.find('li a').navScroller({ '$document' : $document }),
+        $pageNav = $pageWrapper.find('nav#pageNav').topNav({
+            '$document' : $document,
+            '$pageWrapper' : $pageWrapper,
+            '$sectionNav' : $sectionNav
+        });
 
     //section divider icon click gently scrolls to reveal the section
 	$pageWrapper.find(".sectiondivider").on('click', function(event) {
@@ -122,68 +191,28 @@ $(document).ready(function (){
         }
 	});
 
-    var topNav = {
 
-        hide : function(hide){
-            if (hide){
-                $pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
-            } else {
-                $pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
-            }
-        },
+    var throttledScrollHandler = throttle(function(){
+        var pageScrollTop = $document.scrollTop();
 
-        pastScrollOffsetAttribute : function(val){
-            if (typeof val !== undefined){
+        function pastScrollOffsetAttribute(val){
+            if (typeof val === 'number' || val === null){
+                if (val !== null) {
+                    // Create a sort of 'class string'
+                    val = Array(val / 100).fill(1).map(function(v, i){
+                        return (i + 1) * 100;
+                    }).join(' ');
+                }
                 $pageWrapper.attr('scroll-offset-past', val);
             } else {
                 return $pageWrapper.attr('scroll-offset-past');
             }
-        },
+        };
 
-        pageTopShow : true,
-        throttledScrollHandler : throttle(function(){
-            var pageScrollTop = $document.scrollTop();
+        if (pageScrollTop > 100) pastScrollOffsetAttribute(Math.floor(pageScrollTop / 100) * 100);
+        else pastScrollOffsetAttribute(null);
 
-            // Set topNav visible if at page top
-            if (!topNav.pageTopShow && pageScrollTop < $pageNav.height()){
-                topNav.pageTopShow = true;
-                if (!topNav.hoverShow) {
-                    topNav.hide(false);
-                }
-            } else if (topNav.pageTopShow && pageScrollTop >= $pageNav.height()) {
-                topNav.pageTopShow = false;
-                if (!topNav.hoverShow) {
-                    topNav.hide(true);
-                }
-            }
-
-            if (pageScrollTop > 800) topNav.pastScrollOffsetAttribute(800);
-            else if (pageScrollTop > 700) topNav.pastScrollOffsetAttribute(700);
-            else if (pageScrollTop > 600) topNav.pastScrollOffsetAttribute(600);
-            else if (pageScrollTop > 500) topNav.pastScrollOffsetAttribute(500);
-            else if (pageScrollTop > 400) topNav.pastScrollOffsetAttribute(400);
-            else if (pageScrollTop > 300) topNav.pastScrollOffsetAttribute(300);
-            else if (pageScrollTop > 200) topNav.pastScrollOffsetAttribute(200);
-            else if (pageScrollTop > 100) topNav.pastScrollOffsetAttribute(100);
-            else topNav.pastScrollOffsetAttribute(null);
-        }, 100, true),
-
-        hoverShow : false,
-        throttledMouseMoveHandler : throttle(function(e){
-            if (!topNav.hoverShow && e.clientY < 18) {
-                topNav.hoverShow = true;
-                if (!topNav.pageTopShow){
-                    topNav.hide(false);
-                }
-            } else if (topNav.hoverShow && e.clientY > ( $pageNav.height() + $sectionNav.height() )){
-                topNav.hoverShow = false;
-                if (!topNav.pageTopShow) {
-                    topNav.hide(true);
-                }
-            }
-        }, 100, true)
-
-    };
+    }, 100, true);
 
 
     // Adjust top padding when menu items elide on smaller-width screens.
@@ -192,14 +221,14 @@ $(document).ready(function (){
         $sectionNavItems.populateDestinations();
     }, 300, true);
 
-    $document
-    .on('resize', throttledResizeHandler)
-    .on('scroll', topNav.throttledScrollHandler)
-    .on('mousemove', topNav.throttledMouseMoveHandler);
+    $(window).on('resize', throttledResizeHandler).on('scroll', throttledScrollHandler).on('load', function(){
+        $pageWrapper.addClass('page-loaded');
+        setTimeout(function(){ $pageWrapper.addClass('page-load-transition'); }, 200);
+    });
 
     // Do initial layout calcs.
     throttledResizeHandler();
-    topNav.throttledScrollHandler();
+    throttledScrollHandler();
 
 });
 

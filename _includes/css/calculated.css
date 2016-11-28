@@ -24,6 +24,7 @@
     {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
     {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
     nav#sectionNav .p-{{id}} { border-color: {{ bg }}; }
+    nav#sectionNav .p-{{id}}:before { background-color: {{ bg }}; }
     #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
     #{{id}} a { color: {{ fg }}; }
     #{{id}} .sectiondivider { color: {{ bg }}; }
@@ -37,13 +38,38 @@
 
 nav#pageNav ul li,
 nav#sectionNav ul li {
-  border-top:{{navborder}}px solid;
   padding: {{navborder}}px;
+  padding-bottom: 0;
+}
+
+nav#pageNav ul li {
+  border-top:{{navborder}}px solid;
 }
 
 nav#pageNav ul li:hover, 
-nav#pageNav ul li.active,
-nav#sectionNav ul li:hover, 
-nav#sectionNav ul li.active {
-  border-top-width: {{navborder_active}}px;
+nav#pageNav ul li.active {
+  border-top-width: {{ navborder_active }}px;
+}
+
+nav#sectionNav ul li {
+  padding-top: {{navborder_active}}px;
+}
+
+nav#sectionNav ul li:before {
+  height: {{navborder}}px;
+  {% if site.blur_nav_color_bar %}
+  top: {{ navborder_active | minus: navborder | divided_by : 2 }}px;
+  filter: blur(2px);
+  {% endif %}
+}
+
+nav#sectionNav ul li:hover:before, 
+nav#sectionNav ul li.active:before {
+  {% if site.blur_nav_color_bar %}
+  height: {{navborder_active | plus : 1}}px;
+  top: -1px;
+  filter: blur(1px);
+  {% else %}
+  height: {{navborder_active }}px;
+  {% endif %}
 }

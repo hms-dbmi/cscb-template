@@ -1,7 +1,7 @@
 ---
 title: "setup details"
-bg: orange
-color: black
+bg: blue
+color: white
 fa-icon: toggle-on
 collection : home
 ---

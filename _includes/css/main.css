@@ -228,7 +228,6 @@ nav.fixed-nav {
 nav#pageNav {
   height: 45px;
   font-size: 13px;
-  background: #363636;
   box-sizing: content-box;
   padding-bottom: 50px;
 }
@@ -236,6 +235,7 @@ nav#pageNav {
 nav#sectionNav {
   top: 45px;
   background:#2e2e2e;
+  /* background:rgba(24,24,24,0.9); */
   font-size:15px;
   min-height: 70px;
 }
@@ -261,6 +261,10 @@ nav ul {
   letter-spacing:-4px;
 }
 
+nav#pageNav ul {
+  background: #363636;
+}
+
 nav ul li {
   display:inline-block;
   *display:inline;
@@ -284,7 +288,20 @@ nav#pageNav ul li {
 
 nav#sectionNav ul li {
   line-height:60px;
+  height: 64px;
+  transition: border-width 0s;
+  position: relative;
 }
+
+nav#sectionNav ul li:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: height .25s, top .25s;
+}
+
 
 nav#pageNav ul li a, 
 nav#pageNav ul li a:visited,
@@ -293,6 +310,7 @@ nav#sectionNav ul li a:visited {
   display:block;
   color:#fff;
   text-decoration:none;
+  padding-bottom: 4px;
 }
 
 nav#pageNav ul li a,
@@ -312,9 +330,7 @@ nav ul li a:hover {
 }
 
 nav#pageNav ul li:hover, 
-nav#pageNav ul li.active,
-nav#sectionNav ul li:hover, 
-nav#sectionNav ul li.active {
+nav#pageNav ul li.active {
   padding-top: 0;
 }
 

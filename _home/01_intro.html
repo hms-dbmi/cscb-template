@@ -24,7 +24,7 @@ collection : home
     background-image: url({{ 'img/humanstemcell-web-big-grayscale.jpg' | relative_url }});
     opacity: 0.3;
     background-size: cover;
-    background-position: 50% 100%;
+    background-position: 50% 50%;
     z-index: 0;
   }
   .intro-title-prefix {
@@ -32,13 +32,23 @@ collection : home
     padding-right: 4%;
     margin-bottom: 30px;
    }
-   .title-wrap-block h1 > span, .title-wrap-block h2 > span,
-   .title-wrap-block h3 > span, .title-wrap-block h4 > span,
-   .title-wrap-block h5 > span {
-     background-color: rgba(56, 146, 210, 0.5);
-     transition: background-color 1.5s; 
-     display: inline-block;
+
+   #home01_intro .single-page-section {
+     transform: translate3d(0, 0px, 0);
+     transition: transform 1.25s, opacity 1s;
    }
+
+   .title-wrap-block h3 span,
+   .title-wrap-block h4 span,
+   .title-wrap-block h1 span,
+   #home01_intro h5 span {
+     background-color: #2686ca;
+     background-color: rgba(38, 134, 202, 0.9);
+     padding: 0 4px;
+     display: inline-block;
+     transition: background-color 1s;
+   }
+
 
   /* Non-mobile screen size styles */
   @media screen and (min-width: 768px){
@@ -47,12 +57,13 @@ collection : home
       margin-bottom: 48px;
     }
     #home01_intro { 
-      padding-top: 180px; /* Default for first section on SinglePaged is 140px */
+      padding-top: 200px; /* Default for first section on SinglePaged is 140px */
     }
     /** Background Transition on scroll down (scroll-offset-past attribute set in site.js) **/
     #home01_intro:before {
-      transition: filter 1s, opacity 1s;
-      filter: blur(0px);
+      transition: filter 1.5s, opacity 0.25s;
+      /* filter: blur(0px) contrast(100%); */
+      filter: blur(0px) contrast(350%) brightness(75%) opacity(90%);
       opacity: 0.25;
       transform: translateY(9px);
       /* Browser renders blur transition slowly (esp. w opacity dif, img) which is noticeable on scroll,
@@ -60,28 +71,61 @@ collection : home
       e.g. http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css */
       transform: translate3d(0px, 9px, 0px);
     }
-    #main[scroll-offset-past='100'] #home01_intro:before {
-      filter: blur(1px);
+    #main[scroll-offset-past~='100'] #home01_intro:before {
+      filter: blur(1px) contrast(200%) brightness(90%) opacity(90%);
+      transition: filter 1s, opacity 0.25s;
     }
-    #main[scroll-offset-past='200'] #home01_intro:before {
-      filter: blur(3px);
+    #main[scroll-offset-past~='100'] #home01_intro .single-page-section {
+      transform: translate3d(0, 20px, 0);
+      transition: transform .66s, opacity 1s;
     }
-    #main[scroll-offset-past='300'] #home01_intro:before {
-      filter: blur(5px);
+    #main[scroll-offset-past~='200'] #home01_intro:before {
+      filter: blur(3px) contrast(400%) brightness(100%) opacity(85%);
     }
-    #main[scroll-offset-past='400'] #home01_intro:before,
-    #main[scroll-offset-past='500'] #home01_intro:before,
-    #main[scroll-offset-past='600'] #home01_intro:before,
-    #main[scroll-offset-past='700'] #home01_intro:before,
-    #main[scroll-offset-past='800'] #home01_intro:before {
-      filter: blur(7px);
+    #main[scroll-offset-past~='200'] #home01_intro .single-page-section {
+      transform: translate3d(0, 40px, 0);
+    }
+    
+    #main[scroll-offset-past~='200'] #home01_intro .title-wrap-block h1 span,
+    #main[scroll-offset-past~='200'] #home01_intro .title-wrap-block h3 span,
+    #main[scroll-offset-past~='200'] #home01_intro .title-wrap-block h4 span,
+    #main[scroll-offset-past~='200'] #home01_intro h5 span,
+    #main:not(.page-load-transition) #home01_intro .title-wrap-block h1 span,
+    #main:not(.page-load-transition) #home01_intro .title-wrap-block h3 span,
+    #main:not(.page-load-transition) #home01_intro .title-wrap-block h4 span,
+    #main:not(.page-load-transition) #home01_intro h5 span{
+      background-color: transparent;
+    }
+    #main[scroll-offset-past~='300'] #home01_intro:before {
+      filter: blur(5px) contrast(800%) brightness(100%) opacity(80%);
+    }
+    #main[scroll-offset-past~='300'] #home01_intro .single-page-section {
+      transform: translate3d(0, 60px, 0);
+    }
+    #main[scroll-offset-past~='400'] #home01_intro:before,
+    #main:not(.page-load-transition) #home01_intro:before {
+      filter: blur(7px) contrast(1000%) brightness(100%) opacity(75%);
+    }
+    #main:not(.page-loaded) #home01_intro:before {
+      opacity: 0;
+    }
+    #main[scroll-offset-past~='400'] #home01_intro .single-page-section {
+      transform: translate3d(0, 80px, 0);
+      opacity: 0.5;
+    }
+    #main[scroll-offset-past~='500'] #home01_intro .single-page-section {
+      transform: translate3d(0, 20px, 0); /* When off-screen */
+      opacity: 1;
+    }
+    #main:not(.page-load-transition) #home01_intro .single-page-section {
+      opacity: 0;
     }
   }
 
 </style>
 
 <h5 class="intro-title-prefix left text-500">
-  Harvard Stem Cell Institute&nbsp;&nbsp;<i class="fa fa-angle-right"></i>
+  <span>Harvard Stem Cell Institute</span>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>
 </h5>
 
 <div class="title-wrap-block left">
