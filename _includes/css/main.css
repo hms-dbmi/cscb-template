@@ -533,3 +533,85 @@ nav#pageNav ul li.active {
     column-count:         2;
   }
 }
+
+
+/** Team Member Blocks **/
+
+.team-member-blocks {
+
+}
+
+.team-member-block {
+  padding: 0 10px 10px;
+}
+
+.team-member-block h1,
+.team-member-block h2,
+.team-member-block h3,
+.team-member-block h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.team-member-block h5,
+.team-member-block h6 {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px){
+  .team-member-block {
+    width: 50%;
+    float: left;
+    padding-bottom: 20px;
+  }
+}
+
+.team-member-block > .inner {
+    background-color: rgba(255,255,255,0.15);
+    padding: 9px 12px;
+    position: relative;
+    height: 100%;
+    min-height: 94px; /* 9px padding * 2 + 3px padding * 2 + 70px */
+}
+
+.team-member-block .avatar,
+.team-member-block .detail {
+  display: block;
+  width: auto;
+}
+
+.team-member-block .avatar {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  min-height: 76px;
+  width: 70px;
+  float: left;
+}
+
+.team-member-block .detail {
+  padding: 0 5px;
+}
+
+.team-member-block .avatar > img {
+  width: 70px;
+}
+
+.team-member-block .detail.has-avatar {
+  padding-left: 85px;
+}
+
+.team-member-block .detail .name {
+  padding : 1px 0 4px;
+  font-weight: 600;
+}
+
+.team-member-block .detail a,
+.team-member-block .detail a {
+  text-decoration: none;
+}
+
+.team-member-block .detail a:hover,
+.team-member-block .detail a:hover {
+  text-shadow: 0 0 0;
+  text-decoration: underline;
+}

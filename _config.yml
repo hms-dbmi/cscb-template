@@ -67,3 +67,34 @@ collections:
   #team:
   #  order: 5
   #  color: turquoise
+
+team_members:
+
+  - name: "Nils Gehlenborg"
+    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
+    email: text@example.com
+    link: http://www.gehlenborg.com/
+    role: "Principal Investigator (PI)"
+    more_info: "Gehlenborg Lab" # Use 'more_info' for any extra info, shown under role on 'card'
+
+  - name: "Peter Park"
+    role : "Principal Investigator (PI)"
+    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
+    link: http://compbio.hms.harvard.edu/people/peter-j-parklab
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+
+  - name: "Jennifer Marx"
+    role : "Software Engineer"
+    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
+    link: http://www.jkmarx.com/
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+
+  - name: "Scott Ouellette"
+    role : "Software Engineer"
+    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
+    link: http://www.scott-ouellette.com/
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+
+team_members_config:
+  group_by_role: false
+  show_emails: false

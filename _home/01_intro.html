@@ -111,11 +111,16 @@ collection : home
     }
     #main[scroll-offset-past~='400'] #home01_intro .single-page-section {
       transform: translate3d(0, 80px, 0);
-      opacity: 0.5;
+      opacity: 0.75;
     }
     #main[scroll-offset-past~='500'] #home01_intro .single-page-section {
+      transform: translate3d(0, 100px, 0);
+      opacity: 0.5;
+    }
+    #main[scroll-offset-past~='600'] #home01_intro .single-page-section {
       transform: translate3d(0, 20px, 0); /* When off-screen */
       opacity: 1;
+      transition: transform 0s, opacity 1s;
     }
     #main:not(.page-load-transition) #home01_intro .single-page-section {
       opacity: 0;

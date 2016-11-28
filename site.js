@@ -13,25 +13,39 @@ $.extend($.easing,
 (function( $ ) {
 
     // Attach to window object (global scope) so can use it in other & in-content scripts if need be.
-    window.throttle = function(func, wait, tail) {
-        var time = Date.now();
+    window.throttle = function(func, wait, tail, begin, thisArg, debounce) {
+        if (typeof begin !== 'boolean') begin = true;
+        if (typeof thisArg === 'undefined') thisArg = func;
+        if (typeof debounce === 'undefined') debounce = false;
+        if (debounce) tail = true; // Can't debounce w/o tailing
+        
         var timeout = null;
+        var time = Date.now();
         return function() {
+            
             var expire = time + wait - Date.now();
-            if (expire < 0) {
-                func.apply(func, arguments);
+
+            if (begin && expire < 0){
+                func.apply(thisArg, arguments);
                 time = Date.now();
-                if (timeout !== null){
-                    clearTimeout(timeout);
-                    timeout = null;
-                }
-            } else if (tail) {
-                if (timeout !== null){
-                    clearTimeout(timeout);
-                }
-                timeout = setTimeout(func.bind(func,arguments), expire);
             }
-        }
+            if (tail) {
+                if (timeout !== null) { 
+                    clearTimeout(timeout); 
+                    timeout = null;
+                };
+                timeout = setTimeout(function(args){
+                    if (time + wait - Date.now() < 0){
+                        func.apply(thisArg,args);
+                        time = Date.now();
+                        if (timeout !== null){
+                            clearTimeout(timeout);
+                            timeout = null;
+                        }
+                    }
+                }.bind(this), debounce ? wait : expire, arguments);
+            }
+        };
     }
 
     $.fn.navScroller = function(options) {
@@ -147,7 +161,7 @@ $.extend($.easing,
                     $tn.hide(true);
                 }
             }
-        }, 100, true);
+        }, 100, true, true);
 
         $tn.settings.$document
         .on('scroll', throttledScrollHandler)
@@ -158,6 +172,31 @@ $.extend($.easing,
         return $tn;
 
     };
+
+    $.fn.equalizer = function(options){
+        var $container = this;
+        options = $.extend({
+            $window: null,
+            minWidth : 768
+        }, options );
+        if (!(options.$window instanceof jQuery)) options.$window = $(window);
+        $container.settings = options;
+        var throttledResizeHandler = throttle(function(){
+            var maxHeight = 0;
+            $container.children().height('') // Reset
+            .each(function(index, child){
+                maxHeight = Math.max(maxHeight, $(child).height());
+            })
+            .each(function(index, child){
+                $(child).height(maxHeight);
+            });
+        }, 300, true, false, null, true);
+
+        $container.settings.$window.on('resize', throttledResizeHandler);
+        throttledResizeHandler();
+
+        return $container;
+    }
 
 })( jQuery );
 
@@ -217,9 +256,10 @@ $(document).ready(function (){
 
     // Adjust top padding when menu items elide on smaller-width screens.
     var throttledResizeHandler = throttle(function(){
+        console.log('resze handler called');
         $pageWrapper[0].style.paddingTop = ($sectionNav.height() - 70) + $pageNav.height() + 'px';
         $sectionNavItems.populateDestinations();
-    }, 300, true);
+    }, 300, true, false, null, true);
 
     $(window).on('resize', throttledResizeHandler).on('scroll', throttledScrollHandler).on('load', function(){
         $pageWrapper.addClass('page-loaded');

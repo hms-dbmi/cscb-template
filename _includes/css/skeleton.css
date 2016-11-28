@@ -21,18 +21,18 @@
 
 
 /* ----- Tablet (Portrait) -- 768px ----- */
-  @media only screen and (min-width: 768px) and (max-width: 959px) {
-    .container               { width: 768px; }
+  @media screen and (min-width: 768px) and (max-width: 979px) {
+    .container               { width: 740px; }
 
-    .container .small.column { width: 236px; }
-    .container .half.column  { width: 364px; }
-    .container .big.column   { width: 488px; }
-    .container .full.column  { width: 748px; }
+    .container .small.column { width: 180px; }
+    .container .half.column  { width: 360px; }
+    .container .big.column   { width: 470px; }
+    .container .full.column  { width: 720px; }
   }
 
 
 /* ----- Mobile (Portrait) ----- */
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .container                { width:  96%; }
     .container .column        { margin:  1%; }
 
