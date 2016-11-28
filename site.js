@@ -79,10 +79,11 @@ $.extend($.easing,
             var navID = $(event.target).attr("href").substring(1);
             navItems.disableScrollFn = true;
             activateNav(navID);
-        	$('html,body').stop().animate({scrollTop: Math.max(navItems.sections[navID] - navItems.settings.scrollToOffset, 0)},
+            var targetScrollTop = Math.max(navItems.sections[navID] - navItems.settings.scrollToOffset, 0);
+        	$('html,body').stop().animate({scrollTop: targetScrollTop},
                 navItems.settings.scrollSpeed, "easeInOutExpo", function(){
                     navItems.disableScrollFn = false;
-                    navItems.settings.$document.trigger('scroll');
+                    if (targetScrollTop === 0) navItems.settings.$document.trigger('scroll');
                 }
             );
     	}, 250, false);
@@ -133,7 +134,6 @@ $.extend($.easing,
         };
 
         var throttledScrollHandler = throttle(function(e){
-            console.log(e);
             var pageScrollTop = $tn.settings.$document.scrollTop();
 
             // Set topNav visible if at page top
@@ -258,7 +258,6 @@ $(document).ready(function (){
 
     // Adjust top padding when menu items elide on smaller-width screens.
     var throttledResizeHandler = throttle(function(){
-        console.log('resze handler called');
         $pageWrapper[0].style.paddingTop = ($sectionNav.height() - 70) + $pageNav.height() + 'px';
         $sectionNavItems.populateDestinations();
     }, 300, true, false, null, true);

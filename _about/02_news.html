@@ -1,17 +1,19 @@
 ---
 title: "News"
-bg: blue
-color: white
+bg: white
+color: black
 collection : about
 fa-icon: newspaper-o
 ---
 
-<h1 class="left no-side-padding">Latest News</h1>
-
-<div id="newsBlock">
+<div id="newsBlock" class="fg-color-{{ page.color }}">
     {% for post in site.posts %}
         <div class="news-item">
-            {{ post.content }}
+            <h6 class="date">{{ post.date | date_to_long_string }}</h6>
+            <h4 class="article-title">{{ post.title }}</h4>
+            <article class="article-body">
+                {{ post.content }}
+            </article>
         </div>
     {% endfor %}
 </div>

@@ -27,7 +27,11 @@
     nav#sectionNav .p-{{id}}:before { background-color: {{ bg }}; }
     #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
     #{{id}} a { color: {{ fg }}; }
+    {% if node.bg == 'white' %}
+    #{{id}} .sectiondivider { color: {{ fg }}; }
+    {% else %}
     #{{id}} .sectiondivider { color: {{ bg }}; }
+    {% endif %}
     #{{id}} hr { border-color: {{ fg }}; }
   {% endfor %}
 {% endfor %}
