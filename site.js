@@ -147,7 +147,7 @@ $.extend($.easing,
                 }
             };
 
-        }, 100, true);
+        }, 100, true, true, null, false);
 
         var throttledMouseMoveHandler = throttle(function(e){
             if (!$tn.hoverShow && e.clientY < 18) {
