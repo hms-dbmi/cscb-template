@@ -6,14 +6,40 @@ collection : about
 fa-icon: newspaper-o
 ---
 
+<script>
+    window.toggleExtraNewsVisibility = function(event){
+        event.preventDefault(); 
+        $('#newsBlock .hidden').slideToggle({ duration: 800, easing: 'easeInOutExpo' }); 
+        $(event.target)
+        .attr('href', event.target.innerText == 'See More' ? '#news-item-4' : '#news-item-2')
+        .html(event.target.innerText == 'See More' ? 'Hide' : 'See More');
+    }
+</script>
+
 <div id="newsBlock" class="fg-color-{{ page.color }}">
-    {% for post in site.posts %}
-        <div class="news-item">
+    {% for i in (1..site.posts.size) %}
+    {% assign index = i | minus: 1 %}
+    {% assign post = site.posts[index] %}
+        <div id="news-item-{{i}}" class="news-item{% if i > 3 %} hidden{% endif %}">
             <h6 class="date">{{ post.date | date_to_long_string }}</h6>
             <h4 class="article-title">{{ post.title }}</h4>
             <article class="article-body">
                 {{ post.content }}
             </article>
+            {% if post.tags %}
+            <h6 class="tags">
+                <label>Tags</label>
+                {% for tag in post.tags %}
+                <span class="tag">{{ tag }}</span>{% if post.tags.last != tag %}, {% endif %}
+                {% endfor %}
+            </h6>
+            {% endif %}
         </div>
     {% endfor %}
+
+    {% if site.posts.size > 3 %}
+    <h6 class="right sm-margin-top text-500">
+        <a href="#news-item-4" onclick="toggleExtraNewsVisibility(event)">See More</a>
+    </h6>
+    {% endif %}
 </div>

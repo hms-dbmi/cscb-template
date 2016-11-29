@@ -140,7 +140,7 @@ $.extend($.easing,
             var pageScrollTop = $tn.settings.$document.scrollTop();
 
             // Set topNav visible if at page top
-            if (!$tn.pageTopShow && pageScrollTop < $tn.height()){
+            if (pageScrollTop < $tn.height()){
                 $tn.pageTopShow = true;
                 if (!$tn.hoverShow) {
                     $tn.hide(false);
@@ -152,7 +152,7 @@ $.extend($.easing,
                 }
             };
 
-        }, 100, true, true, null, false);
+        }, 100, true, true, null, true);
 
         var throttledMouseMoveHandler = throttle(function(e){
             if (!$tn.hoverShow && e.clientY < 18) {
@@ -225,8 +225,9 @@ $(document).ready(function (){
 
     //links going to other sections nicely scroll
 	$pageWrapper.find(".container a").each(function(){
-        if ($(this).attr("href").charAt(0) == '#'){
-            $(this).on('click', function(event) {
+        var $this = $(this);
+        if ($this.attr("href").charAt(0) == '#' && $this.attr("href").length > 1){
+            $this.on('click', function(event) {
         		event.preventDefault();
                 var target = $(event.target).closest("a");
                 var targetHight =  $(target.attr("href")).offset().top
