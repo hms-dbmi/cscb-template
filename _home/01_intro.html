@@ -1,5 +1,5 @@
 ---
-title: "home"
+title: "CSCB"
 bg: bluebrighter
 color: white
 style: center
@@ -49,6 +49,16 @@ collection : home
      transition: background-color 1s;
    }
 
+   /** CSS BG Images not counted as part of page load,
+   so create copy/dummy img element of it and have it hidden off-screen
+   so window.onload only triggers when it also has loaded **/
+   img.off-screen-preload {
+     position: absolute;
+     height: 1px;
+     width: 1px;
+     opacity: 0.001;
+   }
+
 
   /* Non-mobile screen size styles */
   @media screen and (min-width: 768px){
@@ -65,11 +75,11 @@ collection : home
       /* filter: blur(0px) contrast(100%); */
       filter: blur(0px) contrast(350%) brightness(75%) opacity(90%);
       opacity: 0.25;
-      transform: translateY(9px);
+      transform: translateY(15px);
       /* Browser renders blur transition slowly (esp. w opacity dif, img) which is noticeable on scroll,
       so try to use GPU / hardware acceleration over CPU w/ a translate3d 'nudge'
       e.g. http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css */
-      transform: translate3d(0px, 9px, 0px);
+      transform: translate3d(0px, 15px, 0px);
     }
     #main[scroll-offset-past~='100'] #home01_intro:before {
       filter: blur(1px) contrast(200%) brightness(90%) opacity(90%);
@@ -97,14 +107,14 @@ collection : home
       background-color: transparent;
     }
     #main[scroll-offset-past~='300'] #home01_intro:before {
-      filter: blur(5px) contrast(800%) brightness(100%) opacity(80%);
+      filter: blur(5px) contrast(800%) brightness(100%) opacity(75%);
     }
     #main[scroll-offset-past~='300'] #home01_intro .single-page-section {
       transform: translate3d(0, 60px, 0);
     }
     #main[scroll-offset-past~='400'] #home01_intro:before,
     #main:not(.page-load-transition) #home01_intro:before {
-      filter: blur(7px) contrast(1000%) brightness(100%) opacity(75%);
+      filter: blur(7px) contrast(1000%) brightness(100%) opacity(60%);
     }
     #main:not(.page-loaded) #home01_intro:before {
       opacity: 0;
@@ -137,15 +147,17 @@ collection : home
   <h3 class="no-margin-bottom"><span>Center for</span></h3>
   <h1 class="text-600"><span>Stem Cell Bioinformatics</span></h1>
 
-<!--
-<img src="{{ 'img/humanstemcell-web.jpg' | relative_url }}" style="width: 480px; height: 360px;" />
-{:.containerized}
--->
+  <!--
+  <img src="{{ 'img/humanstemcell-web.jpg' | relative_url }}" style="width: 480px; height: 360px;" />
+  {:.containerized}
+  -->
 
-<hr class="med-margin extra-wide" />
+  <hr class="med-margin extra-wide" />
 
-<h3 class="left no-margin-bottom"><span>Proposal for FY2017</span></h3>
+  <h3 class="left no-margin-bottom"><span>Proposal for FY2017</span></h3>
 
-<h4><span>Peter J. Park (PI), Shannon Ho Sui, Nils Gehlenborg</span></h4>
+  <h4><span>Peter J. Park (PI), Shannon Ho Sui, Nils Gehlenborg</span></h4>
 
 </div>
+
+<img class="off-screen-preload" src="{{ 'img/humanstemcell-web-big-grayscale.jpg' | relative_url }}"/>

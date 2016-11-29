@@ -524,7 +524,8 @@ nav#pageNav ul li.active {
 #newsBlock .news-item {
     padding: 15px 18px;
     background: #fff;
-    box-shadow: 0 0 3px 0px rgba(0,0,0,0.125);
+    background: rgba(255,255,255,0.75);
+    /* box-shadow: 0 0 3px 0px rgba(0,0,0,0.125); */
 }
 
 #newsBlock .news-item:not(:last-child){

@@ -1,10 +1,16 @@
 ---
 title: "Why"
-bg: bluedark
+bg: "#1f8cd9"
 color: white
-fa-icon: check-square-o
+fa-icon: question
 collection : home
 ---
+
+<style>
+  #home02_why {
+    background-image: none;
+  }
+</style>
 
 #### Basically
 

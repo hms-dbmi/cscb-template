@@ -1,6 +1,6 @@
 ---
 title: "usage"
-bg: "bluedark" #'#63BD2F'
+bg: bluedark #'#63BD2F'
 color: white
 fa-icon: plug
 collection : home

@@ -37,6 +37,7 @@ colors:
   purple:       '#c869bf'
   orange:       '#fab125'
   turquoise:    '#0fbfcf'
+  harvardred:   '#c4162d'
 
 kramdown:
   auto_ids:  false
@@ -50,10 +51,10 @@ kramdown:
 collections:
   home:
     order: 0
-    color: bluedark
+    color: bluebrighter
   about:
     order: 1
-    color: purple
+    color: bluebrighter
   stem-cell-commons:
     order: 2 
     title: "Stem Cell Commons"
