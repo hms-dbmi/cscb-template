@@ -69,6 +69,33 @@ $.extend($.easing,
             });
         };
 
+        navItems.scrollTo = function(location){
+
+            function performScroll(targetScrollTop){
+                navItems.disableScrollFn = true;
+                $('html,body').stop().animate({scrollTop: targetScrollTop},
+                    navItems.settings.scrollSpeed, "easeInOutExpo", function(){
+                        navItems.disableScrollFn = false;
+                        if (targetScrollTop === 0) navItems.settings.$document.trigger('scroll');
+                    }
+                );
+            }
+
+            if (typeof location === 'number'){
+                // if target scrollTop px
+                if (window.requestAnimationFrame){
+                    window.requestAnimationFrame(performScroll.bind(this, location));
+                } else {
+                    setTimeout(performScroll, 0, location);
+                }
+            } else if (typeof location === 'string') {
+                // if section/nav id (hash pre-removed)
+                navItems.scrollTo(Math.max(navItems.sections[location] - navItems.settings.scrollToOffset, 0))
+            } else {
+                throw new Error("'location' param must be a number (scrollTop) or string (section ID).");
+            }
+        }
+
         function activateNav(navID){
             for (nav in navItems.navs) { $(navItems.navs[nav]).removeClass('active'); }
             $(navItems.navs[navID]).addClass('active');
@@ -77,15 +104,8 @@ $.extend($.easing,
         //attatch click listeners
         var throttledNavClickHandler = throttle(function(event){
             var navID = $(event.target).attr("href").substring(1);
-            navItems.disableScrollFn = true;
             activateNav(navID);
-            var targetScrollTop = Math.max(navItems.sections[navID] - navItems.settings.scrollToOffset, 0);
-        	$('html,body').stop().animate({scrollTop: targetScrollTop},
-                navItems.settings.scrollSpeed, "easeInOutExpo", function(){
-                    navItems.disableScrollFn = false;
-                    if (targetScrollTop === 0) navItems.settings.$document.trigger('scroll');
-                }
-            );
+            navItems.scrollTo(navID);
     	}, 250, false);
     	navItems.on('click', function(e){
             e.preventDefault();
@@ -220,7 +240,8 @@ $(document).ready(function (){
 
     //section divider icon click gently scrolls to reveal the section
 	$pageWrapper.find(".sectiondivider").on('click', function(event) {
-    	$('html,body').stop().animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
+        var $body = $('html,body');
+        setTimeout($body.stop().animate.bind($body), 0, {scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
 	});
 
     //links going to other sections nicely scroll
@@ -230,8 +251,9 @@ $(document).ready(function (){
             $this.on('click', function(event) {
         		event.preventDefault();
                 var target = $(event.target).closest("a");
-                var targetHight =  $(target.attr("href")).offset().top
-            	$('html,body').animate({scrollTop: targetHight - 170}, 800, "easeInOutExpo");
+                var targetHeight =  $(target.attr("href")).offset().top;
+                var $body = $('html,body');
+                setTimeout($body.stop().animate.bind($body), 0, {scrollTop: targetHeight - 170}, 800, "easeInOutExpo");
             });
         }
 	});
