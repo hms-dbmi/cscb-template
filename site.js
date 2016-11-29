@@ -98,7 +98,10 @@ $.extend($.easing,
             var page_height = $(window).height();
             var pos = navItems.settings.$document.scrollTop();
             for (i in navItems.sections) {
-                if ((pos + navItems.settings.scrollToOffset >= navItems.sections[i]) && navItems.sections[i] < pos + page_height){
+                if (
+                    (pos + navItems.settings.scrollToOffset + (page_height/4) >= navItems.sections[i]) && 
+                    (navItems.sections[i] < pos + (page_height * (3/4)))
+                ){
                     activateNav(i);
                 }
             }

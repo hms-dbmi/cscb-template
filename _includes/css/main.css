@@ -5,6 +5,18 @@ body {
   /* Match nav colors so doesn't show empty white space/bg on touch screens when swipe past doc body height */
 }
 
+a {
+  text-decoration: none;
+}
+
+p > a {
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* ----- code, syntax highlighting, etc ----- */
 
 code, pre { font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
@@ -55,7 +67,8 @@ hr {
   opacity: 0.75;
 }
 
-/* ---- mixin styling classes ---- */
+/* ---- mixin utility styling classes ---- */
+/* Use these classes within content/markdown */
 
 .center { text-align: center !important; }
 .left, .container .left { text-align: left !important; }
@@ -121,6 +134,31 @@ hr.extra-wide { width: 100%; }
   .margin-minus-right.more { margin-right: -90px; }
   .minus-left.more { left: -90px; }
   .minus-right.more { left: 90px; }
+}
+
+.padding-8-percent {
+  padding-left: 8% !important;
+  padding-right: 8% !important;
+}
+
+.padding-5-percent {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+.padding-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.float-left {
+  float: left;
+  margin-right: 10px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 10px;
 }
 
 /* ----- section elements ----- */
@@ -343,9 +381,16 @@ nav#pageNav ul li.active {
   text-align:center;
   background-color:#2e2e2e;
   background-image:none;
+  color: #ddd;
 }
 #footer .container p { font-size:13px; margin:0; }
-
+#footer a {
+  text-decoration: none;
+  color:#fff;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
 .subtlecircle {
   text-align:center;
   z-index:3;

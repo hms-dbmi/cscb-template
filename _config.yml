@@ -38,6 +38,9 @@ colors:
   orange:       '#fab125'
   turquoise:    '#0fbfcf'
   harvardred:   '#c4162d'
+  4dnblue:      '#258cab'
+  4dngreen:     '#80a847'
+
 
 kramdown:
   auto_ids:  false
@@ -52,13 +55,13 @@ collections:
   home:
     order: 0
     color: bluebrighter
-  about:
-    order: 1
-    color: bluebrighter
   stem-cell-commons:
-    order: 2 
+    order: 1 
     title: "Stem Cell Commons"
     color: bluebrighter
+  about:
+    order: 2
+    color: bluedark
   training:
     order: 3
     color: green
