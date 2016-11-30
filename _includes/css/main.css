@@ -422,7 +422,8 @@ nav#pageNav ul li.active {
 .sectiondivider .fa-stack {
   font-size: 130px;
   position: static;
-  margin-top: -8px;
+  margin-top: -10px;
+  margin-left: -10px;
 }
 
 .sectiondivider .fa-stack .fa-stack-1x {

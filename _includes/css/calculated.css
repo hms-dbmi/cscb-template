@@ -37,6 +37,8 @@
 {% endfor %}
 
 
+/** Nav Items **/
+
 {% assign navborder = 3 %}
 {% assign navborder_active = 6 %}
 
@@ -77,3 +79,27 @@ nav#sectionNav ul li.active:before {
   height: {{navborder_active }}px;
   {% endif %}
 }
+
+{% if site.layout.divider_size %}
+/** Section Divider Icon Sizes **/
+
+.section {
+  padding: {{ site.layout.divider_size | plus: 45 }}px 0 {{ site.layout.divider_size | plus: 80 }}px;
+}
+
+.sectiondivider {
+    width: {{ site.layout.divider_size | times: 2 | plus: 10 }}px;
+    height: {{ site.layout.divider_size | times: 2 | plus: 10 }}px;
+    top: -{{ site.layout.divider_size | plus: 5 }}px;
+    margin-left: -{{ site.layout.divider_size | plus: 5 }}px;
+}
+
+.sectiondivider .fa-stack {
+  font-size: {{ site.layout.divider_size }}px;
+}
+
+.sectiondivider h5 {
+  width: {{ site.layout.divider_size | times: 2 | minus: 20 }}px;
+}
+
+{% endif %}

@@ -102,3 +102,6 @@ team_members:
 team_members_config:
   group_by_role: false
   show_emails: false
+
+layout:
+  divider_size: 100 # Increase or decrease size of section dividers
