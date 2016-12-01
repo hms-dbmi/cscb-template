@@ -1,6 +1,6 @@
 ---
 title: "Analyze"
-bg: bluedark
+bg: darkblue
 color: white
 fa-icon: search
 collection : stem-cell-commons
@@ -11,7 +11,7 @@ collection : stem-cell-commons
 {:.left.minus-left.no-margin-bottom}
 
 # Analyze
-{:.left.no-margin.text-600}
+{:.left.no-margin.text-500}
 
 ### Your Own or Public Data Sets
 {:.left.minus-right.no-margin-bottom}

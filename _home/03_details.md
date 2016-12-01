@@ -1,6 +1,6 @@
 ---
 title: "setup details"
-bg: blue
+bg: brightblue
 color: white
 fa-icon: toggle-on
 collection : home

@@ -28,18 +28,24 @@ blur_nav_color_bar : false
 ### Pre-defined template color 'shortcuts', use in SinglePaged page/section page headers
 ### Or, may use hex representation directly (if want to use different color)
 colors:
-  black:        '#111111'
-  white:        '#f8f8f8'
-  blue:         '#49a7e9'
-  bluedark:     '#3892d2'
-  bluebrighter: '#24a5ff'
-  green:        '#9bcf2f'
-  purple:       '#c869bf'
-  orange:       '#fab125'
-  turquoise:    '#0fbfcf'
-  harvardred:   '#c4162d'
-  4dnblue:      '#258cab'
-  4dngreen:     '#80a847'
+
+  # Default SinglePaged colors
+  black:          '#111111'
+  white:          '#f8f8f8'
+  blue:           '#49a7e9'
+  green:          '#9bcf2f'
+  purple:         '#c869bf'
+  orange:         '#fab125'
+  turquoise:      '#0fbfcf'
+
+  # HMS Colors
+  harvardcrimson: '#c4162d'
+  brightblue:     '#24a5ff'
+  darkblue:       '#1f8cd9'
+  4dnblue:        '#258cab'
+  4dngreen:       '#80a847'
+  bluedark:       '#3892d2'
+  bluebrighter:   '#24a5ff'
 
 
 kramdown:
@@ -100,8 +106,25 @@ team_members:
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
 team_members_config:
-  group_by_role: false
+  group_by_role: false # Not yet implemented
   show_emails: false
 
 layout:
-  divider_size: 100 # Increase or decrease size of section dividers
+
+  # Imported from Google Fonts. If change, will likely need to adjust CSS for certain 
+  # elements to find best-fitting font-weights ('bold-ness'), such as navs.
+  header_font: Rubik
+  body_font: Source Sans Pro
+
+  # Depending on the font, normal font-weight (400) may appear too bold for the site's body font-size. May adjust it here.
+  body_font_weight: 400
+  body_font_bold_weight: 500
+
+  # Nav sizes
+  page_nav_height: 60
+  page_nav_font_size: 15 # In pixels
+  section_nav_height: 50
+  section_nav_font_size: 13 # In pixels
+
+  # Increase or decrease size of section dividers
+  divider_size: 100

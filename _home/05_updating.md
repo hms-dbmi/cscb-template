@@ -1,6 +1,6 @@
 ---
 title: "updating"
-bg: blue
+bg: brightblue
 color: white
 fa-icon: cloud-upload
 collection : home

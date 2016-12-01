@@ -1,6 +1,6 @@
 ---
 title: "Reproduce"
-bg: blue
+bg: darkblue
 color: white
 fa-icon: smile-o
 collection : stem-cell-commons
@@ -13,7 +13,7 @@ collection : stem-cell-commons
 {:.left.minus-left.no-margin-bottom}
 
 # Reproduce
-{:.left.no-margin.text-600}
+{:.left.no-margin.text-500}
 
 ### Studies and Document Findings
 {:.left.minus-right.no-margin-bottom}

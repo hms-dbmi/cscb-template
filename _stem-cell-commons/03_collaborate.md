@@ -1,6 +1,6 @@
 ---
 title: "Collaborate"
-bg: purple
+bg: brightblue
 color: white
 fa-icon: group
 collection : stem-cell-commons
@@ -10,7 +10,7 @@ collection : stem-cell-commons
 {:.left.minus-left.no-margin-bottom}
 
 # Collaborate
-{:.left.no-margin.text-600}
+{:.left.no-margin.text-500}
 
 ### With your Colleagues on your Analyses
 {:.left.minus-right.no-margin-bottom}

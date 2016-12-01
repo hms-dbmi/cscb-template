@@ -1,6 +1,6 @@
 ---
 title: "Discover"
-bg: blue
+bg: brightblue
 color: white
 style: center
 collection : stem-cell-commons
@@ -10,7 +10,7 @@ collection : stem-cell-commons
 {:.left.minus-left.no-margin-bottom}
 
 # Discover
-{:.left.no-margin.text-600}
+{:.left.no-margin.text-500}
 
 ### Over 200 Stem Cell-related Data Sets
 {:.left.minus-right.no-margin-bottom}

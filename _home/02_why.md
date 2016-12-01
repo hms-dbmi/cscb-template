@@ -1,6 +1,6 @@
 ---
 title: "Why"
-bg: "#1f8cd9"
+bg: darkblue
 color: white
 fa-icon: question
 collection : home

@@ -107,6 +107,7 @@ $.extend($.easing,
             activateNav(navID);
             navItems.scrollTo(navID);
     	}, 250, false);
+
     	navItems.on('click', function(e){
             e.preventDefault();
             throttledNavClickHandler.call(this, e);
@@ -148,11 +149,19 @@ $.extend($.easing,
         $tn.hoverShow = false;
         $tn.pageTopShow = $tn.settings.initiallyOpen;
 
+        var unsetDisableTimeout = null;
         $tn.hide = function(hide){
             if (hide){
-                $tn.settings.$pageWrapper.addClass('navbar-hide').removeClass('navbar-show');
+                if (unsetDisableTimeout !== null){
+                    clearTimeout(unsetDisableTimeout);
+                    unsetDisableTimeout = null;
+                }
+                $tn.settings.$pageWrapper.addClass('navbar-hide navbar-disabled').removeClass('navbar-show');
             } else {
                 $tn.settings.$pageWrapper.addClass('navbar-show').removeClass('navbar-hide');
+                unsetDisableTimeout = setTimeout(function(){
+                    $tn.settings.$pageWrapper.removeClass('navbar-disabled');
+                }, 450);
             }
         };
 

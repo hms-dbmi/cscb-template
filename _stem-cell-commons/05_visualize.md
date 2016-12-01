@@ -1,6 +1,6 @@
 ---
 title: "Visualize"
-bg: bluedark
+bg: brightblue
 color: white
 fa-icon: line-chart
 collection : stem-cell-commons
@@ -10,7 +10,7 @@ collection : stem-cell-commons
 {:.left.minus-left.no-margin-bottom}
 
 # Visualize
-{:.left.no-margin.text-600}
+{:.left.no-margin.text-500}
 
 ### Results of your Analyses
 {:.left.minus-right}

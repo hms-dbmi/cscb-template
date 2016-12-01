@@ -1,6 +1,6 @@
 ---
 title: "video"
-bg: bluedark
+bg: darkblue
 color: white
 fa-icon: film
 ---

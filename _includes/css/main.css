@@ -11,6 +11,7 @@ a {
 
 p > a {
   font-weight: 500;
+  text-shadow: 0 0 1px;
 }
 
 a:hover {
@@ -254,6 +255,9 @@ nav#pageNav {
   font-size: 13px;
   box-sizing: content-box;
   padding-bottom: 50px;
+  -webkit-transition: top .75s;
+  pointer-events: all;
+  transition: top .75s;
 }
 
 nav#sectionNav {
@@ -266,6 +270,14 @@ nav#sectionNav {
 
 #main.navbar-hide nav#pageNav {
   top: -45px;
+  -webkit-transition: top .75s;
+  transition: top .75s;
+}
+
+#main.navbar-disabled nav#pageNav,
+#main.navbar-hide nav#pageNav {
+  /* .navbar-disabled is unset .75s after .navbar-hide to help prevent accidental page changes */
+  pointer-events: none;
 }
 
 #main.navbar-hide nav#sectionNav {
@@ -339,13 +351,13 @@ nav#sectionNav ul li a:visited {
 
 nav#pageNav ul li a,
 nav#pageNav ul li a:visited {
-  font-weight: 800;
+  font-weight: 400;
   opacity: .5;
 }
 
 nav#sectionNav ul li a, 
 nav#sectionNav ul li a:visited {
-  font-weight:600;
+  font-weight: 500;
   opacity:.75;
 }
 
@@ -435,7 +447,7 @@ nav#pageNav ul li.active {
 
 .sectiondivider h5 {
   font-size:15px;
-  font-weight:700;
+  font-weight: 500;
   text-transform:uppercase;
   position:absolute;
   bottom:50px;
@@ -763,8 +775,7 @@ table tr.highlighted td {
 }
 
 .team-member-block .detail .name {
-  padding : 1px 0 4px;
-  font-weight: 600;
+  padding : 2px 0 2px;
 }
 
 .team-member-block .detail a,
