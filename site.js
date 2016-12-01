@@ -293,7 +293,7 @@ $(document).ready(function (){
 
     // Adjust top padding when menu items elide on smaller-width screens.
     var throttledResizeHandler = throttle(function(){
-        $pageWrapper[0].style.paddingTop = ($sectionNav.height() - 70) + $pageNav.height() + 'px';
+        $pageWrapper[0].style.paddingTop = (($sectionNav.height() + $pageNav.height()) - $pageNav.attr('orig-height')) + 'px';
         $sectionNavItems.populateDestinations();
     }, 300, true, false, null, true);
 

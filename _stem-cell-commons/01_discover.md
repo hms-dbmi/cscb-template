@@ -1,6 +1,6 @@
 ---
 title: "Discover"
-bg: brightblue
+bg: darkblue
 color: white
 style: center
 collection : stem-cell-commons

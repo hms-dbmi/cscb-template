@@ -1,6 +1,6 @@
 ---
 title: "Collaborate"
-bg: brightblue
+bg: darkblue
 color: white
 fa-icon: group
 collection : stem-cell-commons

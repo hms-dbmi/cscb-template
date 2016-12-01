@@ -1,6 +1,6 @@
 ---
 title: "About"
-bg: bluedark
+bg: darkblue
 color: white
 style: center
 collection : about

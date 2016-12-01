@@ -78,7 +78,7 @@ nav#pageNav {
   height: {{ site.layout.page_nav_height }}px;
 }
 #main.navbar-hide nav#pageNav {
-  top: -{{ site.layout.page_nav_height | divided_by : 1.5 }}px;
+  top: -{{ site.layout.page_nav_height | divided_by : 1.5 | round }}px;
 }
 nav#sectionNav {
   top: {{ site.layout.page_nav_height }}px;
@@ -95,6 +95,9 @@ nav#pageNav {
 {% endif %}
 
 {% if site.layout.section_nav_height %}
+#main {
+  padding-top: {{ site.layout.section_nav_height }}px;
+}
 nav#sectionNav {
   min-height : {{ site.layout.section_nav_height }}px;
 }

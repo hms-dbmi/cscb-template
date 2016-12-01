@@ -1,6 +1,6 @@
 ---
 title: "Reproduce"
-bg: darkblue
+bg: brightblue
 color: white
 fa-icon: smile-o
 collection : stem-cell-commons

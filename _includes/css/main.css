@@ -82,6 +82,11 @@ hr {
 .reg-margin, .reg-margin-bottom { margin-bottom: 20px !important; } /* Same as h1,h2,etc. default */
 .med-margin, .med-margin-bottom { margin-bottom: 27px !important; }
 .big-margin, .big-margin-bottom { margin-bottom: 48px !important; }
+.neg-xs-margin,  .neg-xs-margin-bottom  { margin-bottom: -10px !important; }
+.neg-sm-margin,  .neg-sm-margin-bottom  { margin-bottom: -15px !important; }
+.neg-reg-margin, .neg-reg-margin-bottom { margin-bottom: -20px !important; }
+.neg-med-margin, .neg-med-margin-bottom { margin-bottom: -27px !important; }
+.neg-big-margin, .neg-big-margin-bottom { margin-bottom: -48px !important; }
 
 .no-margin,  .no-margin-top  { margin-top: 0 !important; }
 .xs-margin,  .xs-margin-top  { margin-top: 10px !important; }

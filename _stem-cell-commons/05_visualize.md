@@ -1,6 +1,6 @@
 ---
 title: "Visualize"
-bg: brightblue
+bg: darkblue
 color: white
 fa-icon: line-chart
 collection : stem-cell-commons

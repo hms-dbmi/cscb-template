@@ -60,14 +60,14 @@ kramdown:
 collections:
   home:
     order: 0
-    color: bluebrighter
+    color: brightblue
   stem-cell-commons:
     order: 1 
     title: "Stem Cell Commons"
-    color: bluebrighter
+    color: brightblue
   about:
     order: 2
-    color: bluedark
+    color: brightblue
   training:
     order: 3
     color: green
@@ -79,9 +79,9 @@ collections:
   #  color: turquoise
 
 team_members:
-
+    # If possible, use '//' or 'https://' instead of 'http://' for avatars
   - name: "Nils Gehlenborg"
-    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
     email: text@example.com
     link: http://www.gehlenborg.com/
     role: "Principal Investigator (PI)"
@@ -89,19 +89,19 @@ team_members:
 
   - name: "Peter Park"
     role : "Principal Investigator (PI)"
-    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
     link: http://compbio.hms.harvard.edu/people/peter-j-parklab
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Jennifer Marx"
     role : "Software Engineer"
-    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
     link: http://www.jkmarx.com/
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Scott Ouellette"
     role : "Software Engineer"
-    avatar: http://static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
     link: http://www.scott-ouellette.com/
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
@@ -121,7 +121,7 @@ layout:
   body_font_bold_weight: 500
 
   # Nav sizes
-  page_nav_height: 60
+  page_nav_height: 64
   page_nav_font_size: 15 # In pixels
   section_nav_height: 50
   section_nav_font_size: 13 # In pixels

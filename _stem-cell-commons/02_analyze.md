@@ -1,6 +1,6 @@
 ---
 title: "Analyze"
-bg: darkblue
+bg: brightblue
 color: white
 fa-icon: search
 collection : stem-cell-commons

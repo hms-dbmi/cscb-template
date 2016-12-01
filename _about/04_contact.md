@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-bg: 4dngreen
+bg: darkblue
 color: white
 collection : about
 fa-icon: envelope
