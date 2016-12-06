@@ -61,22 +61,19 @@ collections:
   home:
     order: 0
     color: brightblue
-  stem-cell-commons:
-    order: 1 
-    title: "Stem Cell Commons"
-    color: brightblue
   about:
-    order: 2
+    order: 1
     color: brightblue
   training:
-    order: 3
+    order: 2
     color: green
   consulting:
-    order: 4
+    order: 3
     color: turquoise
-  #team:
-  #  order: 5
-  #  color: turquoise
+  stem-cell-commons:
+    order: 4 
+    title: "Stem Cell Commons"
+    color: brightblue
 
 team_members:
     # If possible, use '//' or 'https://' instead of 'http://' for avatars
