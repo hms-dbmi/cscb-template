@@ -184,7 +184,7 @@ $.extend($.easing,
         }, 100, true, true, null, true);
 
         var throttledMouseMoveHandler = throttle(function(e){
-            if (!$tn.hoverShow && e.clientY < 18) {
+            if (!$tn.hoverShow && e.clientY < 18 && window.innerWidth > 767) {
                 $tn.hoverShow = true;
                 if (!$tn.pageTopShow){
                     $tn.hide(false);
