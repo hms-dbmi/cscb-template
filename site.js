@@ -167,7 +167,6 @@ $.extend($.easing,
 
         var throttledScrollHandler = throttle(function(e){
             var pageScrollTop = $tn.settings.$document.scrollTop();
-
             // Set topNav visible if at page top
             if (pageScrollTop < $tn.height()){
                 $tn.pageTopShow = true;
@@ -180,7 +179,6 @@ $.extend($.easing,
                     $tn.hide(true);
                 }
             };
-
         }, 100, true, true, null, true);
 
         var throttledMouseMoveHandler = throttle(function(e){
