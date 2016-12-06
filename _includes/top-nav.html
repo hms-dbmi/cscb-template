@@ -1,5 +1,8 @@
 <nav id="pageNav" class="fixed-nav" orig-height="{% if site.layout.page_nav_height %}{{ site.layout.page_nav_height }}{% else %}45{% endif %}">
+    {% assign sorted_collections = site.collections | sort: "order" %}
+    {% assign currentColl = sorted_collections | where: "label", include.currentPage | first %}
     <div class="mobile-header">
+      <h6>{% if currentColl.title %}{{ currentColl.title }}{% else %}{{ currentColl.label }}{% endif %}</h6>
       <i class="fa fa-bars fa-fw"></i> Menu
     </div>
     <ul class="collapsed">
