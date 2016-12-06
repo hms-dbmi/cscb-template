@@ -302,6 +302,13 @@ nav ul {
   letter-spacing:-4px;
 }
 
+nav#pageNav .mobile-header {
+  display: none;
+  color: #999;
+  vertical-align: middle;
+  text-align: right;
+}
+
 nav#pageNav ul {
   background: #363636;
 }
@@ -327,9 +334,51 @@ nav#pageNav ul li {
   line-height:36px;
 }
 
+@media screen and (max-width: 767px){
+  #main {
+    padding-top: 0 !important;
+  }
+  nav#pageNav {
+    position: relative;
+    height: auto !important;
+    padding-bottom: 0;
+    top: 0 !important;
+  }
+  nav#pageNav .mobile-header {
+    display: block;
+  }
+  nav#pageNav .mobile-header i.fa-bars {
+    float: right;
+    height: inherit;
+    line-height: inherit;
+    font-size: 1.2rem;
+    padding: 0 20px;
+    color: #eee;
+    cursor: pointer;
+  }
+  nav#pageNav ul {
+    transition: height .5s;
+    overflow-y: hidden;
+  }
+  nav#pageNav ul.collapsed {
+    height: 0px;
+  }
+  nav#pageNav ul li {
+    display: block;
+    /*
+    border-top-width: 0px !important;
+    border-left: 6px solid;
+    */
+  }
+  #main.navbar-show nav#sectionNav {
+    position: relative;
+    top: 0px;
+  }
+}
+
 nav#sectionNav ul li {
   line-height:60px;
-  height: 64px;
+  /* height: 64px; */
   transition: border-width 0s;
   position: relative;
 }
@@ -351,7 +400,7 @@ nav#sectionNav ul li a:visited {
   display:block;
   color:#fff;
   text-decoration:none;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
 }
 
 nav#pageNav ul li a,
@@ -455,7 +504,7 @@ nav#pageNav ul li.active {
   font-weight: 500;
   text-transform:uppercase;
   position:absolute;
-  bottom:50px;
+  bottom: 45px;
   left:auto;
   text-align:center;
   display:block;
@@ -568,12 +617,12 @@ nav#pageNav ul li.active {
   }
   .sectiondivider .fa-stack {
     font-size: 100px;
-    margin-top: -14px;
+    /* margin-top: -14px; */
   }
   .sectiondivider h5 {
     font-size:15px;
-    bottom:30px;
-    width:170px
+    width:170px;
+    bottom: 40px;
   }
 
   .columned {

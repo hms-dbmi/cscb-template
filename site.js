@@ -197,6 +197,11 @@ $.extend($.easing,
             }
         }, 100, true, true);
 
+        // For mobile / toggleButton :
+        $tn.find('i.fa-bars').on('click', function(e){
+            $tn.children('ul').toggleClass('collapsed');
+        });
+
         $tn.settings.$document
         .on('scroll', throttledScrollHandler)
         .on('mousemove', throttledMouseMoveHandler);
@@ -293,7 +298,11 @@ $(document).ready(function (){
 
     // Adjust top padding when menu items elide on smaller-width screens.
     var throttledResizeHandler = throttle(function(){
-        $pageWrapper[0].style.paddingTop = (($sectionNav.height() + $pageNav.height()) - $pageNav.attr('orig-height')) + 'px';
+        if (window.innerWidth < 768){
+            $pageWrapper[0].style.paddingTop = ''; // Reset (for mobile)
+        } else {
+            $pageWrapper[0].style.paddingTop = (($sectionNav.height() + $pageNav.height()) - $pageNav.attr('orig-height')) + 'px';
+        }
         $sectionNavItems.populateDestinations();
     }, 300, true, false, null, true);
 
