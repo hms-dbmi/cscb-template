@@ -346,6 +346,7 @@ nav#pageNav ul li {
   }
   nav#pageNav .mobile-header {
     display: block;
+    padding-left: 20px;
   }
   nav#pageNav .mobile-header i.fa-bars {
     float: right;
@@ -355,6 +356,15 @@ nav#pageNav ul li {
     padding: 0 20px;
     color: #eee;
     cursor: pointer;
+  }
+  nav#pageNav .mobile-header > h6 {
+    float: left;
+    line-height: inherit;
+    height: inherit;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.25px;
   }
   nav#pageNav ul {
     transition: height .5s;
