@@ -197,10 +197,12 @@ $.extend($.easing,
             }
         }, 100, true, true);
 
+
         // For mobile / toggleButton :
         $tn.find('i.fa-bars').on('click', function(e){
             $tn.children('ul').toggleClass('collapsed');
         });
+
 
         $tn.settings.$document
         .on('scroll', throttledScrollHandler)
