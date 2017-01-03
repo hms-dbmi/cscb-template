@@ -1,6 +1,6 @@
 ---
 title: "Program"
-bg: green
+bg: brightblue
 color: white
 collection : training
 

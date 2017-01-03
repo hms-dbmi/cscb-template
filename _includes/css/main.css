@@ -100,6 +100,7 @@ hr {
 .text-600 { font-weight: 600; }
 .text-700 { font-weight: 700; }
 
+hr.med-wide   { width: 90%; }
 hr.wide       { width: 92%; }
 hr.extra-wide { width: 100%; }
 

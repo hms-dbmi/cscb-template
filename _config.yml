@@ -63,13 +63,13 @@ collections:
     color: brightblue
   about:
     order: 1
-    color: brightblue
+    color: darkblue
   training:
     order: 2
-    color: green
+    color: brightblue
   consulting:
     order: 3
-    color: turquoise
+    color: darkblue
   stem-cell-commons:
     order: 4 
     title: "Stem Cell Commons"

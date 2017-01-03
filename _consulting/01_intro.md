@@ -1,6 +1,6 @@
 ---
 title: "Support"
-bg: turquoise
+bg: darkblue
 color: white
 style: center
 collection : consulting

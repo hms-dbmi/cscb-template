@@ -1,6 +1,6 @@
 ---
 title: "Surveys"
-bg: 4dngreen
+bg: darkblue
 color: white
 collection : training
 fa-icon: check-square
