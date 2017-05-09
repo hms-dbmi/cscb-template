@@ -5,24 +5,44 @@ color: white
 collection : training
 
 courses:
-  - date: Nov 4, 2015
-    title: Single Cell RNA-Seq Workshop with Peter Kharchenko
+  - date: April 3-4, 2017
+    title: Introduction to R
+    lab: HSCI, HMS, HNDC
+  - date: March 6-7, 2017
+    title: Introduction to UNIX and Orchestra with HMS-RC
     lab: HSCI
-  - date: Nov 13, 2015
-    title: RNA-Seq (Galaxy-based)
-    lab: HSCI
-  - date: Oct 20, 2016
-    title: Differential Gene Expression Workshop
-    lab: HMS, HNDC, HSCI
+  - date: May 31-July 7, 2017
+    title: In-depth NGS Analysis Course
+    lab: HSCI, HMS, HNDC
     highlighted: true
+
 ---
 
 # Bioinformatics Training Program
 {:.big-margin-bottom}
 
-- 110 registered students
-- 56 hours for workshops <small>(7 hours/day, 8 days total)</small>
-- 168 hours for long courses <small>(7 hours/day, 24 days total) + ~22 office hours</small>
+We provide bioinformatics training through short workshops and in-depth courses.
+
+1. Workshops
+
+*Next Generation Sequencing Introduction Series:*
+
+Workshops on RNA-seq, ChIP-seq to introduce basic concepts of Next-Generation Sequencing (NGS) analysis. The goal of these workshops are to enable researchers to design their studies appropriately and perform preliminary data analyses.
+
+*Basic Bioinformatics Skills Series:*
+
+Topics include R, data visualization using R, Python programming, Unix and high-performance computing (duration varies from half a day to three days).
+
+2. In-Depth Next Generation Sequencing Analysis Courses
+
+These intensive courses run for 10-12 days and are aimed at bench biologists interested in learning how to perform NGS data analysis independently using best practices. Topics covered in this course include:
+
+UNIX & High-Performance Computing (Orchestra with HMS-RC)
+NGS data analysis (RNA-seq, ChIP-seq, Variant calling)
+Statistical analysis using R
+Functional analysis downstream of sequence analysis
+
+*No prior NGS or command line expertise is required for our workshops or courses unless explicitly stated.*
 
 <table class="no-margin-bottom">
     <thead>
@@ -42,3 +62,6 @@ courses:
     {% endfor %}
     </tbody>
 </table>
+
+
+All teaching materials are available online on [Github](https://github.com/hbctraining).

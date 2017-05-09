@@ -77,27 +77,40 @@ collections:
 
 team_members:
     # If possible, use '//' or 'https://' instead of 'http://' for avatars
-  - name: "Nils Gehlenborg"
-    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
-    email: text@example.com
-    link: http://www.gehlenborg.com/
-    role: "Principal Investigator (PI)"
-    more_info: "Gehlenborg Lab" # Use 'more_info' for any extra info, shown under role on 'card'
-
   - name: "Peter Park"
-    role : "Principal Investigator (PI)"
+    role : "Stem Cell Commons"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
     link: http://compbio.hms.harvard.edu/people/peter-j-parklab
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
+  - name: "Shannan Ho Sui"
+    role : "Stem Cell Commons"
+    avatar: //bioinformatics.sph.harvard.edu/images/shannan_headshot.jpg
+    link: http://bioinformatics.sph.harvard.edu
+    more_info: '<a href="http://bioinformatics.sph.harvard.edu/" target="_blank">Harvard Chan Bioinformatics Core</a>'
+
+  - name: "Nils Gehlenborg"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
+    email: text@example.com
+    link: http://www.gehlenborg.com/
+    role: "Stem Cell Commons"
+    more_info: "Gehlenborg Lab" # Use 'more_info' for any extra info, shown under role on 'card'
+
+  - name: "Ilya Sytchev"
+    avatar: ../img/ilya_headshot.png
+    email: text@example.com
+    link: http://bioinformatics.sph.harvard.edu
+    role: "Stem Cell Commons"
+    more_info: "Harvard Chan Bioinformatics Core" # Use 'more_info' for any extra info, shown under role on 'card'
+
   - name: "Jennifer Marx"
-    role : "Software Engineer"
+    role : "Stem Cell Commons"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
     link: http://www.jkmarx.com/
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Scott Ouellette"
-    role : "Software Engineer"
+    role : "Stem Cell Commons"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
     link: http://www.scott-ouellette.com/
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
