@@ -84,8 +84,8 @@ team_members:
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Shannan Ho Sui"
-    role : "Stem Cell Commons"
-    avatar: //bioinformatics.sph.harvard.edu/images/shannan_headshot.jpg
+    role : "http://Stem Cell Commons"
+    avatar: http://bioinformatics.sph.harvard.edu/images/shannan_headshot.jpg
     link: http://bioinformatics.sph.harvard.edu
     more_info: '<a href="http://bioinformatics.sph.harvard.edu/" target="_blank">Harvard Chan Bioinformatics Core</a>'
 
@@ -97,7 +97,7 @@ team_members:
     more_info: "Gehlenborg Lab" # Use 'more_info' for any extra info, shown under role on 'card'
 
   - name: "Ilya Sytchev"
-    avatar: ../img/ilya_headshot.png
+    avatar: img/ilya_headshot.png
     email: text@example.com
     link: http://bioinformatics.sph.harvard.edu
     role: "Stem Cell Commons"
