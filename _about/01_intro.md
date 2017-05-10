@@ -7,7 +7,7 @@ collection : about
 
 The *Center for Stem Cell Bioinformatics* is an interdisciplinary collaboration driven by researchers at the 
 [Harvard Stem Cell Institute](https://hsci.harvard.edu), the
-[HMS Department of Biomedical Informatics](https://dbmi.hms.harvard.edu/about-us), and the [Harvard T.H. Chan School of Public Health](https://www.hsph.harvard.edu/).
+[HMS Department of Biomedical Informatics](https://dbmi.hms.harvard.edu/about-us), the [Harvard T.H. Chan School of Public Health](https://www.hsph.harvard.edu/) and the [University of Sheffield](https://www.sheffield.ac.uk/).
 
 In 2011, the HSCI recognized the increasing need for bioinformatics capacity to handle the vasts amounts of stem cell genomics data being generated at the Institute. A three-tiered strategy was developed:
 

@@ -1,0 +1,51 @@
+---
+title: "Team"
+bg: darkblue
+color: white
+collection : about
+fa-icon: users
+
+## Configure/list scc_team_members in _config.yml
+## ToDo : Categories/Groups
+---
+
+<div class="team-member-blocks column full clearfix reg-margin-top neg-med-margin-bottom">
+{% for member in site.scc_team_members %}
+    <div class="team-member-block">
+        <div class="inner clearfix">
+            {% if member.avatar %}
+            <div class="avatar">
+                <img src="{{ member.avatar }}" />
+            </div>
+            <div class="detail has-avatar">
+            {% else %}
+            <div class="detail no-avatar">
+            {% endif %}
+                {% if member.link %}
+                <h4 class="name">
+                    <a href="{{ member.link }}" target="_blank" title="Go to {{ member.link }}">{{ member.name }}</a>
+                </h3>
+                {% else %}
+                <h4 class="name">{{ member.name }}</h3>
+                {% endif %}
+                {% if member.role %}<h6 class="role">{{ member.role }}</h6>{% endif %}
+                {% if member.email and site.team_members_config.show_emails %}
+                <h6 class="email">
+                    <a href="mailto:{{member.email}}" target="_blank">{{ member.email }}</a>
+                </h6>
+                {% endif %}
+                {% if member.more_info %}
+                <h6 class="more">{{ member.more_info }}</h6>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+
+<script>
+    (function($){
+        $(".team-member-blocks").equalizer();
+    })(jQuery);
+</script>

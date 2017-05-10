@@ -119,6 +119,141 @@ team_members_config:
   group_by_role: false # Not yet implemented
   show_emails: false
 
+
+scc_team_members:
+    # If possible, use '//' or 'https://' instead of 'http://' for avatars
+  - name: "Peter Park"
+    role : "Principal Investigator"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
+    link: http://compbio.hms.harvard.edu/people/peter-j-parklab
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+
+  - name: "Shannan Ho Sui"
+    role : "Co-investigator"
+    avatar: http://bioinformatics.sph.harvard.edu/images/shannan_headshot.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+    more_info: '<a href="http://bioinformatics.sph.harvard.edu/" target="_blank">Harvard Chan Bioinformatics Core</a>'
+
+  - name: "Nils Gehlenborg"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
+    email: text@example.com
+    link: http://www.gehlenborg.com/
+    role: "Co-investigator"
+    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
+
+  - name: "Ilya Sytchev"
+    avatar: img/ilya_headshot.png
+    email: text@example.com
+    link: http://bioinformatics.sph.harvard.edu
+    role: "Senior Bioinformatics Developer"
+    more_info: '<a href="http://bioinformatics.sph.harvard.edu/" target="_blank">Harvard Chan Bioinformatics Core</a>'
+
+  - name: "Jennifer Marx"
+    role : "Software Engineer"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
+    link: http://www.jkmarx.com/
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+
+  - name: "Scott Ouellette"
+    role : "Software Developer"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
+    link: http://compbio.hms.harard.edu/people/scott-ouellette
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+  
+  - name: "Chuck McCallum"
+    role : "Software Developer"
+    avatar: img/chuck-mccallum.jpg
+    link: http://gehlenborglab.org/team/members/chuck-mccallum
+    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
+    
+  - name: "Fritz Lekschas"
+    role: "Graduate student"
+    avatar: img/fritz-lekschas.jpg
+    link: http://lekschas.de
+    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
+ 
+consulting_team_members:
+    # If possible, use '//' or 'https://' instead of 'http://' for avatars
+ 
+  - name: "Shannan Ho Sui"
+    role : "Director"
+    avatar: http://bioinformatics.sph.harvard.edu/images/shannan_headshot.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+    more_info: #'<a href="http://bioinformatics.sph.harvard.edu/" target="_blank">Harvard Chan Bioinformatics Core</a>'
+    
+  - name: "John Hutchinson"
+    role: "Associate Director"
+    avatar: http://bioinformatics.sph.harvard.edu/images/John.png
+    link: http://bioinformatics.sph.harvard.edu/people
+    more_info: #'<a href="https://github.com/jnhutchinson" target="_blank">Github</a>'
+
+  - name: "Brad Chapman"
+    role: "Research Scientist"
+    avatar: img/bchapman.png
+    link: http://bioinformatics.sph.harvard.edu/people
+    more_info: #'<a href="https://github.com/chapmanb" target="_blank">Github</a>'
+    
+  - name: "Rory Kirchner"
+    role: "Research Associate"
+    avatar: img/rkirchner.png
+    link: http://bioinformatics.sph.harvard.edu/people
+    more_info: #'<a href="https://github.com/roryk" target="_blank">Github</a>'
+    
+  - name: "Meeta Mistry"
+    role: "Research Associate"
+    avatar: img/mmistry.png
+    link: http://bioinformatics.sph.harvard.edu/people
+     
+  - name: "Lorena Pantano"
+    role: "Research Associate"
+    avatar: img/lpantano.png
+    link: http://bioinformatics.sph.harvard.edu/people
+
+  - name: "Mary Piper"
+    role: "Research Associate"
+    avatar: img/mpiper.png
+    link: http://bioinformatics.sph.harvard.edu/people
+    
+  - name: "Radhika Khetani"
+    role: "Research Associate"
+    avatar: img/rkhetani.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+  
+  - name: "Victor Barrera"
+    role: "Research Associate"
+    avatar: img/vbarrera.png
+    link: http://bioinformatics.sph.harvard.edu/people
+
+  - name: "Michael Steinbaugh"
+    role: "Research Associate"
+    avatar: img/msteinbaugh.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+   
+    
+training_team_members:
+    # If possible, use '//' or 'https://' instead of 'http://' for avatars
+  - name: "Radhika Khetani"
+    role: "Lead Trainer"
+    avatar: img/rkhetani.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+    
+  - name: "Meeta Mistry"
+    role: "Research Associate"
+    avatar: img/mmistry.png
+    link: http://bioinformatics.sph.harvard.edu/people
+  
+  - name: "Mary Piper"
+    role: "Research Associate"
+    avatar: img/mpiper.png
+    link: http://bioinformatics.sph.harvard.edu/people
+    
+  - name: "Michael Steinbaugh"
+    role: "Research Associate"
+    avatar: img/msteinbaugh.jpg
+    link: http://bioinformatics.sph.harvard.edu/people
+   
+
+
 layout:
 
   # Imported from Google Fonts. If change, will likely need to adjust CSS for certain 

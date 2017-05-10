@@ -6,17 +6,12 @@ collection : about
 fa-icon: envelope
 ---
 
-**Please contact the Gehlenborg or Park Lab for more information:**
+The Stem Cell Commons:
 
+- <i class="fa fa-fw fa-envelope"></i>&nbsp;[team@stemcellcommons.org](mailto:team@stemcellcommons.org)
 
-#### Gehlenborg Lab
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- <i class="fa fa-fw fa-envelope"></i>&nbsp; Email someone at [someone@email.com](mailto:someone@email.com)
-- <i class="fa fa-fw fa-phone"></i>&nbsp; Call Someone at 1 (617) 555-1234
-- <i class="fa fa-fw fa-twitter"></i>&nbsp; Follow [@HarvardDBMI](https://twitter.com/HarvardDBMI)
+Bioinformatics consulting support:
+- <i class="fa fa-fw fa-envelope"></i>&nbsp;[bioinformatics@sph.harvard.edu](mailto:bioinformatics@hsph.harvard.edu)
 
-
-#### Park Lab
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- Someone at [someone@email.com](mailto:someone@email.com)
-- Someone else at [someone@email.com](mailto:someone@email.com)
+Bioinformatics training information: 
+- <i class="fa fa-fw fa-envelope"></i>&nbsp;[HBCtraining@hsph.harvard.edu](mailto:HBCtraining@hsph.harvard.edu)
