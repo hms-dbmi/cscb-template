@@ -18,5 +18,5 @@ collection : stem-cell-commons
 <img src="{{ 'img/screen-visualize.jpg' | relative_url }}" />
 {:.containerized}
 
-Launch the **Integrative Genomics Viewer (IGV)** directly from the Stem Cell Commons to explore genomic data or **visualize FastQC results**.
+Launch the **_Integrative Genomics Viewer (IGV)_** directly from the Stem Cell Commons to explore genomic data or **_visualize FastQC results_**.
 {:.med-margin-top.center}

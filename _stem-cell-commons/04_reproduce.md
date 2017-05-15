@@ -9,7 +9,7 @@ collection : stem-cell-commons
 <img src="{{ 'img/screen-reproduce.jpg' | relative_url }}" />
 {:.containerized.med-margin-bottom}
 
-Use **scalable visualization tools** built into the Stem Cell Commons to review analyses and how files were generated.
+Use **_scalable visualization tools_** built into the Stem Cell Commons to review analyses and how files were generated.
 {:.big-margin-bottom.center}
 
 ### Access Tools that Allow You to
