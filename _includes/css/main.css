@@ -7,10 +7,11 @@ body {
 
 a {
   text-decoration: none;
+  font-weight: 700;
 }
 
 p > a {
-  font-weight: 500;
+  font-weight: 600;
   text-shadow: 0 0 1px;
 }
 
@@ -168,6 +169,14 @@ hr.extra-wide { width: 100%; }
 .float-right {
   float: right;
   margin-left: 10px;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.max-width-740 {
+  max-width: 740px !important;
 }
 
 /* ----- section elements ----- */
@@ -777,9 +786,6 @@ table tr.highlighted td {
 
 /** Team Member Blocks **/
 
-.team-member-blocks {
-
-}
 
 .team-member-block {
   padding: 0 10px 10px;
@@ -844,13 +850,20 @@ table tr.highlighted td {
   padding : 2px 0 2px;
 }
 
-.team-member-block .detail a,
 .team-member-block .detail a {
   text-decoration: none;
 }
 
-.team-member-block .detail a:hover,
+.team-member-block .detail ul li a {
+  font-weight: 400;
+}
+
 .team-member-block .detail a:hover {
   text-shadow: 0 0 0;
   text-decoration: underline;
+}
+
+.team-member-block.lab-member-block > .inner {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-top: 12px;
 }

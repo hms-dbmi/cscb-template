@@ -6,9 +6,9 @@ collection : consulting
 fa-icon: newspaper-o
 ---
 
-### Supported Labs
+## Supported Labs
 {:.left}
 
 
 <img src="{{ 'img/PIs-1.png' | relative_url }}" />
-{:.containerized}
+{:.containerized.display-block.max-width-740}

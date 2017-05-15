@@ -23,17 +23,21 @@ courses:
 
 We provide bioinformatics training through short workshops and in-depth courses.
 
-1. Workshops
+### Workshops
+{:.left.padding-5-percent}
 
-*Next Generation Sequencing Introduction Series:*
+##### *Next Generation Sequencing Introduction Series:*
+{:.left.padding-5-percent.text-500}
 
 Workshops on RNA-seq, ChIP-seq to introduce basic concepts of Next-Generation Sequencing (NGS) analysis. The goal of these workshops are to enable researchers to design their studies appropriately and perform preliminary data analyses.
 
-*Basic Bioinformatics Skills Series:*
+##### *Basic Bioinformatics Skills Series:*
+{:.left.padding-5-percent.text-500}
 
 Topics include R, data visualization using R, Python programming, Unix and high-performance computing (duration varies from half a day to three days).
 
-2. In-Depth Next Generation Sequencing Analysis Courses
+### In-Depth Next Generation Sequencing Analysis Courses
+{:.left.padding-5-percent}
 
 These intensive courses run for 10-12 days and are aimed at bench biologists interested in learning how to perform NGS data analysis independently using best practices. Topics covered in this course include:
 
@@ -64,4 +68,5 @@ Functional analysis downstream of sequence analysis
 </table>
 
 
-All teaching materials are available online on [Github](https://github.com/hbctraining).
+##### All teaching materials are available online on [Github](https://github.com/hbctraining).
+{:.reg-margin-top.padding-5-percent}

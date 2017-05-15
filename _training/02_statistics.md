@@ -9,4 +9,4 @@ fa-icon:  bar-chart
 
 
 <img src="{{ 'img/training-1.png' | relative_url }}" />
-{:.containerized}
+{:.containerized.display-block.max-width-740}

@@ -3,29 +3,54 @@ title: "Team"
 bg: brightblue
 color: white
 collection : about
-fa-icon: envelope
+fa-icon: users
 ---
 
+<div class="team-member-blocks lab-members column full clearfix xs-margin-top xs-margin-bottom">
+{% for lab in site.member_labs %}
+    <div class="team-member-block lab-member-block">
+        <div class="inner clearfix">
+            <div class="detail">
+                {% if lab.link %}
+                <h4 class="name">
+                    <a href="{{ lab.link }}" target="_blank" title="Go to {{ lab.link }}">{{ lab.name }}</a>
+                </h4>
+                {% else %}
+                <h4 class="name">{{ lab.name }}</h3>
+                {% endif %}
+                <ul class="xs-margin-top">
+                    {% if lab.email %}
+                    <li class="email">
+                        <i class="fa fa-fw fa-envelope"></i>&nbsp; <a href="mailto:{{lab.email}}" target="_blank">{{ lab.email }}</a>
+                    </li>
+                    {% endif %}
+                    {% if lab.link %}
+                    <li class="website">
+                        <i class="fa fa-fw fa-globe"></i>&nbsp; <a href="{{lab.link}}" target="_blank">{{ lab.link }}</a>
+                    </li>
+                    {% endif %}
+                    {% if lab.twitter %}
+                    <li class="twitter">
+                        <i class="fa fa-fw fa-twitter"></i>&nbsp; @<a href="https://twitter.com/{{lab.twitter}}" target="_blank">{{ lab.twitter }}</a>
+                    </li>
+                    {% endif %}
+                    {% if lab.more_info %}
+                    <li>{{ lab.more_info }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<p class="center">
+For more information about our team, visit the <a href="stem-cell-commons">Stem Cell Commons</a>, <a href="consulting">Consulting</a> and <a href="training">Training</a> pages.
+</p>
 
 
-#### [Gehlenborg Lab](http://gehlenborglab.org/)
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- <i class="fa fa-fw fa-envelope"></i>&nbsp;[nils@hms.harvard.edu](mailto:nils@hms.harvard.edu)
-- <i class="fa fa-fw fa-twitter"></i>&nbsp; [@nils_gehlenborg](https://twitter.com/nils_gehlenborg)
-
-#### [Harvard Chan Bioinformatics Core](http://bioinformatics.sph.harvard.edu)
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- <i class="fa fa-fw fa-envelope"></i>&nbsp;[bioinformatics@hsph.harvard.edu](mailto:bioinformatics@hsph.harvard.edu)
-- <i class="fa fa-fw fa-twitter"></i>&nbsp;[@bioinfocore](https://twitter.com/bioinfocore)
-
-#### [Hide Lab](https://hidelab.wordpress.com/)
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- <i class="fa fa-fw fa-envelope"></i>&nbsp;[winhide@sheffield.ac.uk](mailto:winhide@sheffield.ac.uk)
-- <i class="fa fa-fw fa-twitter"></i>&nbsp;[@winhide](https://twitter.com/winhide)
-
-#### [Park Lab](https://compbio.hms.harvard.edu/index)
-{:.left.padding-5-percent.xs-margin-bottom.med-margin-top}
-- <i class="fa fa-fw fa-envelope"></i>&nbsp;[bioinformatics@hsph.harvard.edu](mailto:bioinformatics@hsph.harvard.edu)
-- <i class="fa fa-fw fa-twitter"></i>&nbsp;[@HarvardDBMI](https://twitter.com/HarvardDBMI)
-
-For more information about our team, visit the [Stem Cell Commons](stem-cell-commons), [Consulting](consulting) and [Training](training) pages.
+<script>
+    (function($){
+        $(".team-member-blocks").equalizer();
+    })(jQuery);
+</script>

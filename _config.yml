@@ -119,6 +119,23 @@ team_members_config:
   group_by_role: false # Not yet implemented
   show_emails: false
 
+member_labs:
+  - name: "Gehlenborg Lab"
+    link: http://gehlenborglab.org/
+    email: nils@hms.harvard.edu
+    twitter: nils_gehlenborg
+  - name: "Harvard Chan Bioinformatics Core"
+    link: http://bioinformatics.sph.harvard.edu/
+    email: bioinformatics@hsph.harvard.edu
+    twitter: bioinfocore
+  - name: "Hide Lab"
+    link: https://hidelab.wordpress.com/
+    email: winhide@sheffield.ac.uk
+    twitter: winhide
+  - name: "Park Lab"
+    link: https://compbio.hms.harvard.edu/index
+    email: bioinformatics@hsph.harvard.edu
+    twitter: harvardDBMI
 
 scc_team_members:
     # If possible, use '//' or 'https://' instead of 'http://' for avatars
