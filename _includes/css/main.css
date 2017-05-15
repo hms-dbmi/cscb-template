@@ -181,6 +181,16 @@ hr.extra-wide { width: 100%; }
 
 /* ----- section elements ----- */
 
+/*** Section Styles ***/
+
+#home02_description {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height : 200px;
+  border-top: 1px solid #0d7cca;
+  border-bottom: 1px solid #0d7cca;
+}
+
 .title-wrap-block {
   margin: 0 auto;
   padding: 0;
