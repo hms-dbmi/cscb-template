@@ -18,3 +18,6 @@ collection : stem-cell-commons
 
 <img src="{{ 'img/screen-analyze.jpg' | relative_url }}" />
 {:.containerized}
+
+Launch workflows for **FastQC**, **ChIP-seq peak calling**, and **RNA-seq quantification**.
+{:.med-margin-top.center}

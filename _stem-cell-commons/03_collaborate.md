@@ -17,3 +17,6 @@ collection : stem-cell-commons
 
 <img src="{{ 'img/screen-collaborate.jpg' | relative_url }}" />
 {:.containerized}
+
+Add **collaborators** to your data sets/analyses by sending invitation emails directly through the Stem Cell Commons.
+{:.med-margin-top.center}

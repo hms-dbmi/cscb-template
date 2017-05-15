@@ -280,7 +280,7 @@ layout:
 
   # Depending on the font, normal font-weight (400) may appear too bold for the site's body font-size. May adjust it here.
   body_font_weight: 400
-  body_font_bold_weight: 500
+  body_font_bold_weight: 600
 
   # Nav sizes
   page_nav_height: 64

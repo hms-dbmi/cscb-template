@@ -14,19 +14,15 @@ fa-icon: users
                 {% if lab.link %}
                 <h4 class="name">
                     <a href="{{ lab.link }}" target="_blank" title="Go to {{ lab.link }}">{{ lab.name }}</a>
+                    <div class="text-14px">{{ lab.link }}</div>
                 </h4>
                 {% else %}
                 <h4 class="name">{{ lab.name }}</h3>
                 {% endif %}
-                <ul class="xs-margin-top">
+                <ul class="sm-margin-top">
                     {% if lab.email %}
                     <li class="email">
                         <i class="fa fa-fw fa-envelope"></i>&nbsp; <a href="mailto:{{lab.email}}" target="_blank">{{ lab.email }}</a>
-                    </li>
-                    {% endif %}
-                    {% if lab.link %}
-                    <li class="website">
-                        <i class="fa fa-fw fa-globe"></i>&nbsp; <a href="{{lab.link}}" target="_blank">{{ lab.link }}</a>
                     </li>
                     {% endif %}
                     {% if lab.twitter %}

@@ -97,10 +97,18 @@ hr {
 .med-margin, .med-margin-top { margin-top: 27px !important; }
 .big-margin, .big-margin-top { margin-top: 48px !important; }
 
+.neg-xs-margin,  .neg-xs-margin-top  { margin-top: -10px !important; }
+.neg-sm-margin,  .neg-sm-margin-top  { margin-top: -15px !important; }
+.neg-reg-margin, .neg-reg-margin-top { margin-top: -20px !important; }
+.neg-med-margin, .neg-med-margin-top { margin-top: -27px !important; }
+.neg-big-margin, .neg-big-margin-top { margin-top: -48px !important; }
+
 .text-400 { font-weight: 400; }
 .text-500 { font-weight: 500; }
 .text-600 { font-weight: 600; }
 .text-700 { font-weight: 700; }
+
+.text-14px { font-size: 14px; line-height: 18px; }
 
 hr.med-wide   { width: 90%; }
 hr.wide       { width: 92%; }

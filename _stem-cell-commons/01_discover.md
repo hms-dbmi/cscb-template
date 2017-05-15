@@ -17,3 +17,6 @@ collection : stem-cell-commons
 
 <img src="{{ 'img/screen-discover.jpg' | relative_url }}" />
 {:.containerized}
+
+Find data relevant to your studies using full-text search and annotation-based visual exploration of **stem cell-related transcriptomics and epigenomics data sets**.
+{:.med-margin-top.center}
