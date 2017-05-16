@@ -188,6 +188,13 @@ scc_team_members:
     avatar: img/fritz-lekschas.jpg
     link: http://lekschas.de
     more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
+      
+  - name: "Geoffrey Nelson"
+    role: "HSCI Liaison"
+    avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/geoff.jpeg?m=1473437387&itok=5EFgCXdf
+    link: https://compbio.hms.harvard.edu/people/geoff-nelson
+    more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+ 
  
 consulting_team_members:
     # If possible, use '//' or 'https://' instead of 'http://' for avatars
