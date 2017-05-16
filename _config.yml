@@ -154,7 +154,7 @@ scc_team_members:
   - name: "Nils Gehlenborg"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/nils_gehlenborg_march2011-3.png?m=1445310749&itok=DH-IqGUU
     email: text@example.com
-    link: http://www.gehlenborg.com/
+    link: http://gehlenborglab.org/team/members/nils-gehlenborg
     role: "Co-investigator"
     more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
 
