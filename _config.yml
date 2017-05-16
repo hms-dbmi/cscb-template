@@ -169,13 +169,13 @@ scc_team_members:
     role : "Software Engineer"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/circular_jm_2.jpeg?m=1445288985&itok=xPrw5QKe
     link: http://www.jkmarx.com/
-    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>' & '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a> and <a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Scott Ouellette"
     role : "Software Developer"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
     link: http://compbio.hms.harard.edu/people/scott-ouellette
-    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>' & '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
+    more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a> and <a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
   
   - name: "Chuck McCallum"
     role : "Software Developer"
