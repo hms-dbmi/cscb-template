@@ -15,7 +15,7 @@ In 2011, the HSCI recognized the increasing need for bioinformatics capacity to 
 * Develop a [Bioinformatics Core](../consulting) to provide consulting services and grant support 
 * Establish a targeted [bioinformatics training program](../training) to develop expertise in the community
 
-Since its establishment, the Center for Stem Cell Bioinformatics has provided dedicated support to over 70 HSCI affiliated laboratories, trained over 110 HSCI researchers, and continues to develop its data sharing platform with over 300 data sets.
+Since its establishment, the Center for Stem Cell Bioinformatics has provided dedicated support to over 80 HSCI affiliated laboratories on ~150 projects, trained over 200 HSCI researchers, and continues to develop its data sharing platform with over 300 data sets.
 
 
 {:.no-margin-bottom.med-margin-top.padding-8-percent}
