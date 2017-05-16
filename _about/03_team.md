@@ -1,6 +1,6 @@
 ---
 title: "Team"
-bg: brightblue
+bg: darkblue
 color: white
 collection : about
 fa-icon: users
