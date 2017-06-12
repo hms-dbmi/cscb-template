@@ -2,11 +2,9 @@
 title: "Tutorial"
 bg: brightblue
 color: white
-fa-icon: book
 collection : stem-cell-commons
 ---
 
-# Refinery Tutorial 
 
 Refinery is a data management, analysis, and visualization platform designed to support analysts in managing common tasks in analysis and interpretation of biomedical data. 
 
@@ -28,6 +26,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
 </div>
 
 ## 0. Accessing Refinery
+{:.left}
+
 - Go to the [Refinery Launch Pad][scc-home] and either
   - *create a new account*:
     1. Click *__Register__* at the top right of the navigation bar (top of page)
@@ -40,6 +40,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
 ![NavBar](screenshots/NavBar_skitch.png)
 
 ## 1. Creating a Metadata File
+{:.left}
+
 - Create a metadata table within a delimited (e.g. tab-delimited) text file in which rows correspond to data files to be uploaded and columns provide metadata attributes (a template metadata file can be found [here][refinery-sample-metadata.tsv]). The naming and ordering of the columns can be arbitrary, but the metadata table 
   - *must* have 3 columns to describe *(1) sample identifiers, (2) filenames, (3) species identifiers*
     - Tip 1: Assigning these attributes to the first 3 columns of the table (same order as listed above) will slightly simplify the data set upload
@@ -54,6 +56,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
   </div>
 
 ## 2. Uploading a Data Set
+{:.left}
+
 1. From the *__Launch Pad__* (Refinery homepage), Click *__Upload__* from the *__Data Sets__* panel
 ![PanelHeaders](screenshots/PanelHeaders_skitch.png)
 2. First choose delimiter used in the metadata file and then upload the file
@@ -76,11 +80,15 @@ Note the expanded instructions associated with some steps of the tutorial that p
 ![UploadDataSet](screenshots/UploadDataSet_skitch.png)
 
 ## 3. Viewing a Data Set Summary in the Data Set Browser
+{:.left}
+
 - Return to the *__Launch Pad__* and click on the newly uploaded data set title. The *__Data Set Browser__* will display a summary of the data set.
 
 ![DataSetBrowser](screenshots/DataSetBrowser_skitch.png)
 
 ## 4. Exploring Data Set Contents in the File Browser
+{:.left}
+
 - From the *__Data Set Browser__*, click *__View Content in File Browser__* (or the equivalent icon in the *__Data Sets__* panel) to view the individual data files belonging to the data set:
   - Files can be filtered based on attributes (e.g. column names of the related metadata file) using the *__Attribute Filter__* in the left-hand panel
   - Files can also be sorted according to attributes (both ascending and descending) by clicking the attribute names (i.e. column headers)
@@ -88,6 +96,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
 ![FileBrowser](screenshots/FileBrowser_skitch.png)
 
 ## 5. Launching an Analysis
+{:.left}
+
 1. From the *__File Browser__*, click the *__Analyze__* tab above the left-hand panel
 ![Analyze](screenshots/Analyze_skitch.png)
 2. Select one of the analysis workflows below using the drop-down menu in the left-hand panel, follow their workflow-specific steps below, and then continue with step 3
@@ -116,6 +126,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
 ![AnalysisStatus](screenshots/AnalysisStatus_skitch.png)
 
 ## 6. Viewing Analysis Results
+{:.left}
+
 1. Upon successful completion of an analysis, click its name from the *__Analyses__* tab within the *__File Browser__*
 ![ViewAnalysisResults](screenshots/ViewAnalysisResults_skitch.png)
 2. Follow the steps below corresponding to which analysis workflow was run:
@@ -141,11 +153,15 @@ Note the expanded instructions associated with some steps of the tutorial that p
 3. To download any results file, click the down-pointing arrow icon associated with that file
 
 ## 7. Reviewing Data Provenance
+{:.left}
+
 1. Display a data set in the *__File Browser__* (see sections __3. Viewing a Data Set Summary in the Data Set Browser__ and __4. Exploring Data Set Contents in the File Browser__)
 2. Select *__Provenance__* in the *__Display__* drop-down menu located on the right-hand side of the page
 3. Review the displayed nodes to track the analysis history of the data set -- each new analysis will add a new node to the provenance graph
 
 ## 8. Creating and Modifying a Collaboration Group
+{:.left}
+
 - Click *__Collaboration__* within the navigation bar and then
   - *create a new group*
     1. Click the *__+__* icon in the top right of the *__Groups__* panel
@@ -159,12 +175,16 @@ Note the expanded instructions associated with some steps of the tutorial that p
   ![Collaboration](screenshots/Collaboration_skitch.png)
 
 ## 9. Sharing a Data Set with a Collaboration Group
+{:.left}
+
 1. Display a data set in the *__Data Set Browser__* (see section __3. Viewing a Data Set Summary in the Data Set Browser__)
 2. Click *__Share__* above the data set summary
 3. Assign *__Read-only__* or *__Modify__* permissions for that data set to any groups to which you belong
 ![Share](screenshots/Share_skitch.png)
 
 ## 10. Deleting an Analysis or Data Set
+{:.left}
+
 1. To delete an analysis only, click the trash can icon in the *__Analyses__* panel on the *__Launch Pad__*. To delete a data set and all its associated analyses, click the trash can icon in the *__Data Sets__* panel on the *__Launch Pad__*.
 ![Delete](screenshots/Delete_skitch.png)
 
