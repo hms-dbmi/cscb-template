@@ -16,14 +16,16 @@ __Preparation__
 
 To follow the steps of this tutorial, you will need a data set consisting of data files and a metadata file that is referencing your files.
 
-> __Tutorial Data Set__
->
-> This tutorial can be followed using the __Tutorial Data Set__, which consists of sample ChIP-seq data and their associated metadata file. Download the __Tutorial Data Set__ files here:
-> - [control (FASTQ)][input.fastq]
-> - [experimental (FASTQ)][nanog.fastq]
-> - [metadata (TSV)][tutorial.tsv]
->
-> Note the expanded instructions associated with some steps of the tutorial that pertain specifically to the __Tutorial Data Set__. Also, skip section __1. Creating a Metadata File__ since a metadata file is already provided within the __Tutorial Data Set__.
+<div class="tutorial-dataset" markdown="1">
+__Tutorial Data Set__
+
+This tutorial can be followed using the __Tutorial Data Set__, which consists of sample ChIP-seq data and their associated metadata file. Download the __Tutorial Data Set__ files here:
+- [control (FASTQ)][input.fastq]
+- [experimental (FASTQ)][nanog.fastq]
+- [metadata (TSV)][tutorial.tsv]
+
+Note the expanded instructions associated with some steps of the tutorial that pertain specifically to the __Tutorial Data Set__. Also, skip section __1. Creating a Metadata File__ since a metadata file is already provided within the __Tutorial Data Set__.
+</div>
 
 ## 0. Accessing Refinery
 - Go to the [Refinery Launch Pad][scc-home] and either
@@ -47,18 +49,26 @@ To follow the steps of this tutorial, you will need a data set consisting of dat
   - *must* use column names that are unique, do *not* contain special characters, and are *not* the same as the following internally reserved metadata attribute names: *Assay_uuid, Django_ct, Django_id, File_uuid, Genome_build, Id, Is_annotation, Name, Species, Study_uuid, Type*
     - Tip: Descriptive yet concise names will be most effective
 
-> __Tutorial Data Set:__ skip this step since the tab-delimited `tutorial.tsv` metadata file is already provided
+  <div class="tutorial-dataset" markdown="1">
+  __Tutorial Data Set:__ skip this step since the tab-delimited `tutorial.tsv` metadata file is already provided
+  </div>
 
 ## 2. Uploading a Data Set
 1. From the *__Launch Pad__* (Refinery homepage), Click *__Upload__* from the *__Data Sets__* panel
 ![PanelHeaders](screenshots/PanelHeaders_skitch.png)
 2. First choose delimiter used in the metadata file and then upload the file
-    > __Tutorial Data Set:__ upload the tab-delimited `tutorial.tsv` metadata file
+    <div class="tutorial-dataset" markdown="1">
+    __Tutorial Data Set:__ upload the tab-delimited `tutorial.tsv` metadata file
+    </div>
 3. Check metadata *__Preview__* for accuracy (note: only first 5 samples are displayed)
 4. Review *__Configure Metadata Import__* and make changes as needed
-    > __Tutorial Data Set:__ no changes are needed
+    <div class="tutorial-dataset" markdown="1">
+    __Tutorial Data Set:__ no changes are needed
+    </div>
 5. Click *__Add files…__* button under *__Upload Data Files__* and select data files corresponding to the metadata (note: wait for MD5 calculations, which ensure successful data file uploads, to complete)
-    > __Tutorial Data Set:__ upload the `input.fastq` and `nanog.fastq` data files
+    <div class="tutorial-dataset" markdown="1">
+    __Tutorial Data Set:__ upload the `input.fastq` and `nanog.fastq` data files
+    </div>
 6. Click *__Start upload__* to begin uploading all selected data files
 7. After all data files have uploaded, click *__Check Availability of Data Files__* to confirm all files are now on the Refinery server
 8. Click *__Upload Data Set__* to upload the new data set (metadata + data files)
@@ -81,17 +91,23 @@ To follow the steps of this tutorial, you will need a data set consisting of dat
 1. From the *__File Browser__*, click the *__Analyze__* tab above the left-hand panel
 ![Analyze](screenshots/Analyze_skitch.png)
 2. Select one of the analysis workflows below using the drop-down menu in the left-hand panel, follow their workflow-specific steps below, and then continue with step 3
-    > __Tutorial Data Set:__ follow section __5. Launching an Analysis__ twice, first launching the *__FastQC__* workflow and afterwards the *__TF ChIP-seq analysis using MACS2: hg19__* workflow (details below)
+    <div class="tutorial-dataset" markdown="1">
+    __Tutorial Data Set:__ follow section __5. Launching an Analysis__ twice, first launching the *__FastQC__* workflow and afterwards the *__TF ChIP-seq analysis using MACS2: hg19__* workflow (details below)
+    </div>
   - *__FastQC__*
     1. Select the file(s) to analyze
-        > __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
+        <div class="tutorial-dataset" markdown="1">
+        __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
+        </div>
     2. Choose *__Current Selection__* in the *__Input Dataset__* drop-down menu in the left-hand panel
   ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
   - *__TF ChIP-seq analysis using MACS2__*
     1. Under *__Inputs (1-1 File Mapping)__*, click *__New...__* to create a new file mapping
     2. Provide a name for the new file mapping in the pop-up
     3. Drag the leftmost icons (three horizontal bars) of the input control and experimental files onto the *__input_file__* and *__exp_file__* dropzones, respectively, to create the new file mapping
-        > __Tutorial Data Set:__ map `input.fastq` to the *__input_file__* and `nanog.fastq` to the *__exp_file__*
+        <div class="tutorial-dataset" markdown="1">
+        __Tutorial Data Set:__ map `input.fastq` to the *__input_file__* and `nanog.fastq` to the *__exp_file__*
+        </div>
     4. Review the attribute comparison between *__input_file__* and *__exp_file__* to confirm distinct and shared attributes are correct
   ![AnalyzeChIPseq](screenshots/AnalyzeChIPseq_skitch.png)
 3. Click *__Launch Analysis__*
@@ -113,9 +129,13 @@ To follow the steps of this tutorial, you will need a data set consisting of dat
     2. Click the *__Visualize__* tab above the left-hand panel
     3. Select *__Current Selection__* in the *__Select a file set__* drop-down menu in the left-hand panel
     4. Choose the appropriate species in the *__Select a species__* drop-down menu in the left-hand panel
-        > __Tutorial Data Set:__ select *__H. Sapiens (hg19)__*
+        <div class="tutorial-dataset" markdown="1">
+        __Tutorial Data Set:__ select *__H. Sapiens (hg19)__*
+        </div>
     5. Click *__Web-based IGV__* to launch a visualization of the peak calling results
-        > __Tutorial Data Set:__ search *__chr12:1-35,000,000__* in the IGV search box (top left) to see all the peaks__
+        <div class="tutorial-dataset" markdown="1">
+        __Tutorial Data Set:__ search *__chr12:1-35,000,000__* in the IGV search box (top left) to see all the peaks__
+        </div>
     ![ChIPseqResults1](screenshots/ChIPseqResults1_skitch.png)
     ![ChIPseqResults2](screenshots/ChIPseqResults2_skitch.png)
 3. To download any results file, click the down-pointing arrow icon associated with that file
