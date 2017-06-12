@@ -74,6 +74,9 @@ collections:
     order: 4 
     title: "Stem Cell Commons"
     color: brightblue
+  tutorial:
+    order: 5
+    color: darkblue
 
 team_members:
     # If possible, use '//' or 'https://' instead of 'http://' for avatars
