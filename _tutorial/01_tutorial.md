@@ -1,10 +1,11 @@
 ---
 title: "Tutorial"
-bg: brightblue
+bg: darkblue
 color: white
 collection : stem-cell-commons
 ---
 
+# Tutorial
 
 Refinery is a data management, analysis, and visualization platform designed to support analysts in managing common tasks in analysis and interpretation of biomedical data. 
 
