@@ -17,3 +17,5 @@ Our goal is that this platform encourages more stem cell biologists to pursue hi
 All data and tools are open source for the Stem Cell Commons are freely available and can be accessed through our public site:
 
 ## [https://beta.stemcellcommons.org](https://beta.stemcellcommons.org)
+
+## [The Stem Cell Commons Tutorial](https://stemcellcommons.github.io/cscb-website/tutorial)
