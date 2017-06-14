@@ -18,4 +18,4 @@ All data and tools are open source for the Stem Cell Commons are freely availabl
 
 ## [https://beta.stemcellcommons.org](https://beta.stemcellcommons.org)
 
-## [The Stem Cell Commons Tutorial](https://stemcellcommons.github.io/cscb-website/tutorial)
+### For help, see [The Stem Cell Commons Tutorial](https://stemcellcommons.github.io/cscb-website/tutorial)
