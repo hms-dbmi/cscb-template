@@ -19,7 +19,7 @@ ISA-Tab is the preferred format for Refinery as it allows tracking of relationsh
 {:.left}
 
 Download the latest version of [ISAcreator][isa-creator-releases] and follow along with the [video tutorial][isa-creator-video] to create an ISA Tab archive.
-
+<br><br>
 
 ## Data Set Upload
 {:.left}
@@ -28,7 +28,7 @@ Download the latest version of [ISAcreator][isa-creator-releases] and follow alo
 {:.left}
 
 Follow the *__2. Uploading a Data Set__* section in the [Refinery tutorial](tutorial).
-
+<br><br>
 
 ## Collaboration
 {:.left}
