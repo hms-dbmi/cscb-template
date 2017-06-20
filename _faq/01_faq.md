@@ -30,4 +30,4 @@ __How do I share my data with another user?__
 
 [isa-creator-releases]: https://github.com/ISA-tools/ISAcreator/releases
 [isa-creator-video]: https://www.youtube.com/watch?v=abIEtSUrJNY
-[data-set-upload]: tutorial.md#2-uploading-a-data-set
+[data-set-upload]: ../_tutorial/01_tutorial.md#2-uploading-a-data-set
