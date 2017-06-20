@@ -38,7 +38,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
     1. Click *__Login__* at the top right of the navigation bar
     2. Enter the *__Username or E-mail__* and *__Password__* provided during registration and click the *__Login__* button below
 
-![NavBar](screenshots/NavBar_skitch.png)
+![NavBar](../screenshots/NavBar_skitch.png)
 
 ## 1. Creating a Metadata File
 {:.left}
