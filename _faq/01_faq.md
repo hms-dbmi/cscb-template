@@ -5,28 +5,32 @@ color: white
 collection : faq
 ---
 
+# FAQ
+
 ## Metadata
+{:.left}
 
-__Should I provide a tabular or ISA-Tab metadata file?__
-  ISA-Tab is the preferred format for Refinery as it allows tracking of relationships between raw and derived data files. Refinery also supports tabular metadata files, but file relationship information is not supported in this case.
+### Should I provide a tabular or ISA-Tab metadata file?
 
-__How do I create an ISA-Tab metadata file?__
-  Download the latest version of [ISAcreator][isa-creator-releases] and follow along with the [video tutorial][isa-creator-video] to create an ISA Tab archive.
+ISA-Tab is the preferred format for Refinery as it allows tracking of relationships between raw and derived data files. Refinery also supports tabular metadata files, but file relationship information is not supported in this case.
+
+### How do I create an ISA-Tab metadata file?
+
+Download the latest version of [ISAcreator][isa-creator-releases] and follow along with the [video tutorial][isa-creator-video] to create an ISA Tab archive.
 
 ## Data Set Upload
+{:.left}
 
-__How do I get my data into Refinery?__
-  Follow the **_2. Uploading a Data Set_** section in the [Refinery tutorial](tutorial).
+### How do I get my data into Refinery?
+
+Follow the *__2. Uploading a Data Set__* section in the [Refinery tutorial](tutorial).
 
 ## Collaboration
+{:.left}
 
-__How do I share my data with another user?__
-  Only data set owners can change sharing options. To share
-  with an authenticated user, create a new group or invite the user to an
-  existing group on the collaboration page. Owners can update data set permissions (including making it public)
-  on the data set preview by clicking the “sharing” button.
+### How do I share my data with another user?
 
-## Known Issues
+Only data set owners can change sharing options. To share with an authenticated user, create a new group or invite the user to an existing group on the collaboration page. Owners can update data set permissions (including making it public) on the data set preview by clicking the “sharing” button.
 
 [isa-creator-releases]: https://github.com/ISA-tools/ISAcreator/releases
 [isa-creator-video]: https://www.youtube.com/watch?v=abIEtSUrJNY
