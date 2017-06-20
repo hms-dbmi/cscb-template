@@ -11,9 +11,9 @@ The *Center for Stem Cell Bioinformatics* is an interdisciplinary collaboration 
 
 In 2011, the HSCI recognized the increasing need for bioinformatics capacity to handle the vasts amounts of stem cell genomics data being generated at the Institute. A three-tiered strategy was developed:
 
-* Create a [Stem Cell Commons](../stem-cell-commons), an open source environment for sharing, processing and analyzing stem cell data that brings together stem cell data sets with tools for curation, dissemination and analysis
-* Develop a [Bioinformatics Core](../consulting) to provide consulting services and grant support 
-* Establish a targeted [bioinformatics training program](../training) to develop expertise in the community
+* Create a [Stem Cell Commons](stem-cell-commons), an open source environment for sharing, processing and analyzing stem cell data that brings together stem cell data sets with tools for curation, dissemination and analysis
+* Develop a [Bioinformatics Core](consulting) to provide consulting services and grant support 
+* Establish a targeted [bioinformatics training program](training) to develop expertise in the community
 
 Since its establishment, the Center for Stem Cell Bioinformatics has provided dedicated support to over 80 HSCI affiliated laboratories on ~150 projects, trained over 200 HSCI researchers, and continues to develop its data sharing platform with over 300 data sets.
 
