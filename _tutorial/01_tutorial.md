@@ -107,7 +107,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
     __Tutorial Data Set:__ follow section __5. Launching an Analysis__ twice, first launching the *__FastQC__* workflow and afterwards the *__ChIP-seq Peak Calling - Human__* workflow (details below)
     </div>
   - *__FastQC__*
-    1. Select file(s) to analyze by first clicking the arrow next to a file and then ticking its checkbox in the *__Select Tool Input__* popover
+    - Select file(s) to analyze by first clicking the arrow next to a file and then ticking its checkbox in the *__Select Tool Input__* popover
         <div class="tutorial-dataset" markdown="1">
         __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
         </div>
