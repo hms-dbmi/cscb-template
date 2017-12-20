@@ -118,6 +118,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
         __Tutorial Data Set:__ assign `input.fastq` to the *__Control FASTQ__* and `nanog.fastq` to the *__Treatment FASTQ__*
         </div>
   ![AnalyzeChIPseq](screenshots/AnalyzeChIPseq_skitch.png)
+
 3. Click the *__Launch__* button
 4. Modify *__Analysis Name__* as needed in pop-up and then click *__Launch Analysis__*
 5. Review *__Analysis Launch Status__* in pop-up and click *__View Analysis__* to monitor analysis progress within the *__File Browser__*   - Tip: This *__Analyses__* tab within the *__File Browser__* can also be directly accessed by clicking the analysis name from the *__Analyses__* panel on the *__Launch Pad__*
