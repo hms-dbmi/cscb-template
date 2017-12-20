@@ -112,6 +112,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
         __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
         </div>
   ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
+  
   - *__ChIP-seq Peak Calling - Human__*
     - Select files to analyze by first clicking the arrow next to a file and then ticking its checkbox in the *__Select Tool Input__* popover, appropriately assigning *__Treatment FASTQ__* and *__Control FASTQ__* inputs
         <div class="tutorial-dataset" markdown="1">
