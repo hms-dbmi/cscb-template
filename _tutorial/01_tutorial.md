@@ -129,27 +129,14 @@ Note the expanded instructions associated with some steps of the tutorial that p
 
 1. Upon successful completion of an analysis, click its name from the *__Analyses__* tab within the *__File Browser__*
 ![ViewAnalysisResults](screenshots/ViewAnalysisResults_skitch.png)
-2. Follow the steps below corresponding to which analysis workflow was run:
-  - *__FastQC__*
-    1. To view *__FastQC__* results, click the bar graph icon associated with a `\#\_fastqc_results` text file
-    ![FastQCresults1](screenshots/FastQCresults1_skitch.png)
-    2. Use the drop-down menu to view the results of the various *__FastQC__* analysis modules
-    ![FastQCresults2](screenshots/FastQCresults2_skitch.png)
-  - *__TF ChIP-seq analysis using MACS2__*
-    1. To visualize peak calling results, select files to be displayed as tracks in IGV: `\#\_MACS2_bigwig` and/or `\#\_MACS2_bed` files
-    2. Click the *__Visualize__* tab above the left-hand panel
-    3. Select *__Current Selection__* in the *__Select a file set__* drop-down menu in the left-hand panel
-    4. Choose the appropriate species in the *__Select a species__* drop-down menu in the left-hand panel
-        <div class="tutorial-dataset" markdown="1">
-        __Tutorial Data Set:__ select *__H. Sapiens (hg19)__*
-        </div>
-    5. Click *__Web-based IGV__* to launch a visualization of the peak calling results
-        <div class="tutorial-dataset" markdown="1">
-        __Tutorial Data Set:__ search *__chr12:1-35,000,000__* in the IGV search box (top left) to see all the peaks__
-        </div>
-    ![ChIPseqResults1](screenshots/ChIPseqResults1_skitch.png)
-    ![ChIPseqResults2](screenshots/ChIPseqResults2_skitch.png)
-3. To download any results file, click the down-pointing arrow icon associated with that file
+2. To visualize __peak calling__ results, select input files to be displayed as tracks in IGV (e.g. BED, bigWig)
+3. Launch *__IGV__*
+    <div class="tutorial-dataset" markdown="1">
+    __Tutorial Data Set:__ search *__chr12:1-35,000,000__* in the IGV search box (top left) to see all the peaks__
+    </div>
+![ChIPseqResults1](screenshots/ChIPseqResults1_skitch.png)
+![ChIPseqResults2](screenshots/ChIPseqResults2_skitch.png)
+  - Tip: To download any results file, click the down-pointing arrow icon associated with that file
 
 ## 7. Reviewing Data Provenance
 {:.left}
