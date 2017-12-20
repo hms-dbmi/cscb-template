@@ -112,7 +112,6 @@ Note the expanded instructions associated with some steps of the tutorial that p
         __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
         </div>
   ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
-  
   - *__ChIP-seq Peak Calling - Human__*
     - Select files to analyze by first clicking the arrow next to a file and then ticking its checkbox in the *__Select Tool Input__* popover, appropriately assigning *__Treatment FASTQ__* and *__Control FASTQ__* inputs
         <div class="tutorial-dataset" markdown="1">
@@ -121,8 +120,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
   ![AnalyzeChIPseq](screenshots/AnalyzeChIPseq_skitch.png)
 
 3. Click the *__Launch__* button
-4. Modify *__Analysis Name__* as needed in pop-up and then click *__Launch Analysis__*
-5. Review *__Analysis Launch Status__* in pop-up and click *__View Analysis__* to monitor analysis progress within the *__File Browser__*   - Tip: This *__Analyses__* tab within the *__File Browser__* can also be directly accessed by clicking the analysis name from the *__Analyses__* panel on the *__Launch Pad__*
+4. Monitor analysis progress within the *__File Browser__*
+  - Tip: This *__Analyses__* tab within the *__File Browser__* can also be directly accessed by clicking the analysis name from the *__Analyses__* panel on the *__Launch Pad__*
 ![AnalysisStatus](screenshots/AnalysisStatus_skitch.png)
 
 ## 6. Viewing Analysis Results
