@@ -130,19 +130,19 @@ Note the expanded instructions associated with some steps of the tutorial that p
 1. Upon successful completion of an analysis, click its name from the *__Analyses__* tab within the *__File Browser__*
 ![ViewAnalysisResults](screenshots/ViewAnalysisResults_skitch.png)
 2. To visualize __peak calling__ results, select input files to be displayed as tracks in IGV (e.g. BED, bigWig)
+  - Tip: To download any results file, click the down-pointing arrow icon associated with that file
 3. Launch *__IGV__*
     <div class="tutorial-dataset" markdown="1">
     __Tutorial Data Set:__ search *__chr12:1-35,000,000__* in the IGV search box (top left) to see all the peaks__
     </div>
 ![ChIPseqResults1](screenshots/ChIPseqResults1_skitch.png)
 ![ChIPseqResults2](screenshots/ChIPseqResults2_skitch.png)
-  - Tip: To download any results file, click the down-pointing arrow icon associated with that file
 
 ## 7. Reviewing Data Provenance
 {:.left}
 
 1. Display a data set in the *__File Browser__* (see sections __3. Viewing a Data Set Summary in the Data Set Browser__ and __4. Exploring Data Set Contents in the File Browser__)
-2. Select *__Provenance__* in the *__Display__* drop-down menu located on the right-hand side of the page
+2. Select the *__Provenance__* tab
 3. Review the displayed nodes to track the analysis history of the data set -- each new analysis will add a new node to the provenance graph
 
 ## 8. Creating and Modifying a Collaboration Group
@@ -150,12 +150,12 @@ Note the expanded instructions associated with some steps of the tutorial that p
 
 - Click *__Collaboration__* within the navigation bar and then
   - *create a new group*
-    1. Click the *__+__* icon in the top right of the *__Groups__* panel
+    1. Click the *__Add__* button in the top right of the *__Groups__* panel
     2. Choose a unique *__Group name__* and click *__Create group__*
     3. Select the new group within the *__Groups__* panel to display current members of the group within the *__Members__* panel
   - *invite new group members*
-    1. Select a group within the *__Groups__* panel and click the *__+__* icon in the top right of the *__Members__* panel
-    2. Provide a *__Recipient e-mail__* address belonging to the new group member and click *__Send Invite__*
+    1. Select a group within the *__Groups__* panel and click the *__Invite__* button in the top right of the *__Members__* panel
+    2. Provide a *__Recipient email__* address belonging to the new group member and click *__Send Invite__*
       - The new group member will then receive an invitation e-mail with instructions on how to join the group
   
   ![Collaboration](screenshots/Collaboration_skitch.png)
