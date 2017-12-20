@@ -111,17 +111,14 @@ Note the expanded instructions associated with some steps of the tutorial that p
         <div class="tutorial-dataset" markdown="1">
         __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
         </div>
-    ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
-  - *__TF ChIP-seq analysis using MACS2__*
-    - Under *__Inputs (1-1 File Mapping)__*, click *__New...__* to create a new file mapping
-    - Provide a name for the new file mapping in the pop-up
-    - Drag the leftmost icons (three horizontal bars) of the input control and experimental files onto the *__input_file__* and *__exp_file__* dropzones, respectively, to create the new file mapping
+  ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
+  - *__ChIP-seq Peak Calling - Human__*
+    - Select files to analyze by first clicking the arrow next to a file and then ticking its checkbox in the *__Select Tool Input__* popover, appropriately assigning *__Treatment FASTQ__* and *__Control FASTQ__* inputs
         <div class="tutorial-dataset" markdown="1">
-        __Tutorial Data Set:__ map `input.fastq` to the *__input_file__* and `nanog.fastq` to the *__exp_file__*
+        __Tutorial Data Set:__ assign `input.fastq` to the *__Control FASTQ__* and `nanog.fastq` to the *__Treatment FASTQ__*
         </div>
-    - Review the attribute comparison between *__input_file__* and *__exp_file__* to confirm distinct and shared attributes are correct
   ![AnalyzeChIPseq](screenshots/AnalyzeChIPseq_skitch.png)
-3. Click *__Launch Analysis__*
+3. Click the *__Launch__* button
 4. Modify *__Analysis Name__* as needed in pop-up and then click *__Launch Analysis__*
 5. Review *__Analysis Launch Status__* in pop-up and click *__View Analysis__* to monitor analysis progress within the *__File Browser__*   - Tip: This *__Analyses__* tab within the *__File Browser__* can also be directly accessed by clicking the analysis name from the *__Analyses__* panel on the *__Launch Pad__*
 ![AnalysisStatus](screenshots/AnalysisStatus_skitch.png)
