@@ -112,6 +112,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
         __Tutorial Data Set:__ select both `input.fastq` and `nanog.fastq`
         </div>
   ![AnalyzeFastQC](screenshots/AnalyzeFastQC_skitch.png)
+  
   - *__TF ChIP-seq analysis using MACS2__*
     - Under *__Inputs (1-1 File Mapping)__*, click *__New...__* to create a new file mapping
     - Provide a name for the new file mapping in the pop-up
