@@ -7,9 +7,9 @@ collection : stem-cell-commons
 
 # Tutorial
 
-Refinery is a data management, analysis, and visualization platform designed to support analysts in managing common tasks in analysis and interpretation of biomedical data. 
+The Stem Cell Commons is a data management, analysis, and visualization platform designed to support analysts in managing common tasks in analysis and interpretation of biomedical data. 
 
-In this tutorial you will learn how to load data into Refinery, how to analyze it using workflows, and how to view analysis results using built-in visualization tools. Additionally, this tutorial demonstrates how to work with the data repository, how to use features that are supporting reproducible research, and how to use the collaboration tools of Refinery.
+In this tutorial you will learn how to load data into the Stem Cell Commons, how to analyze it using workflows, and how to view analysis results using built-in visualization tools. Additionally, this tutorial demonstrates how to work with the data repository, how to use features that are supporting reproducible research, and how to use the collaboration tools of the Stem Cell Commons.
 
 __Preparation__
 
@@ -26,10 +26,10 @@ This tutorial can be followed using the __Tutorial Data Set__, which consists of
 Note the expanded instructions associated with some steps of the tutorial that pertain specifically to the __Tutorial Data Set__. Also, skip section __1. Creating a Metadata File__ since a metadata file is already provided within the __Tutorial Data Set__.
 </div>
 
-## 0. Accessing Refinery
+## 0. Accessing the Stem Cell Commons
 {:.left}
 
-- Go to the [Refinery Launch Pad][scc-home] and either
+- Go to the [Stem Cell Commons Launch Pad][scc-home] and either
   - *create a new account*:
     1. Click *__Register__* at the top right of the navigation bar (top of page)
     2. Provide the required details and then click the *__Register__* button below
@@ -59,7 +59,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
 ## 2. Uploading a Data Set
 {:.left}
 
-1. From the *__Launch Pad__* (Refinery homepage), Click *__Upload__* from the *__Data Sets__* panel
+1. From the *__Launch Pad__*, Click *__Upload__* from the *__Data Sets__* panel
 ![PanelHeaders](screenshots/PanelHeaders_skitch.png)
 2. First choose delimiter used in the metadata file and then upload the file
     <div class="tutorial-dataset" markdown="1">
@@ -76,7 +76,7 @@ Note the expanded instructions associated with some steps of the tutorial that p
     __Tutorial Data Set:__ upload the `input.fastq` and `nanog.fastq` data files
     </div>
 7. Click *__Start upload__* to begin uploading all selected data files
-8. After all data files have uploaded, click *__Check Data Files__* to confirm all files are now on the Refinery server
+8. After all data files have uploaded, click *__Check Data Files__* to confirm all files are now on the server
 9. Click *__Submit__* to upload the new data set (metadata + data files)
 
 ![UploadDataSet](screenshots/UploadDataSet_skitch.png)
