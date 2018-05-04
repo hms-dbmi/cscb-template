@@ -2,7 +2,7 @@
 title: "Reproduce"
 bg: brightblue
 color: white
-fa-icon: smile-o
+fa-icon: repeat
 collection : stem-cell-commons
 ---
 
