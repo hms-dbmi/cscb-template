@@ -2,7 +2,7 @@
 title: "Analyze"
 bg: brightblue
 color: white
-fa-icon: cog
+fa-icon: cogs
 collection : stem-cell-commons
 ---
 
