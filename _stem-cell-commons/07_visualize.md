@@ -2,7 +2,7 @@
 title: "Visualize"
 bg: darkblue
 color: white
-fa-icon: line-chart
+fa-icon: bar-chart
 collection : stem-cell-commons
 ---
 
