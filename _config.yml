@@ -148,7 +148,7 @@ scc_team_members:
   - name: "Peter Park"
     role : "Principal Investigator"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/pjp_portrait432x288.jpg?m=1445270272&itok=MCx1LyYW
-    link: http://compbio.hms.harvard.edu/people/peter-j-parklab
+    link: http://compbio.hms.harvard.edu/people/peter-j-park
     more_info: '<a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
 
   - name: "Shannan Ho Sui"
@@ -180,7 +180,7 @@ scc_team_members:
   - name: "Scott Ouellette"
     role : "Software Developer"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/scottouellette_0.jpeg?m=1445275612&itok=K51ECKii
-    link: http://compbio.hms.harard.edu/people/scott-ouellette
+    link: http://compbio.hms.harvard.edu/people/scott-ouellette
     more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a> and <a href="http://compbio.hms.harvard.edu/" target="_blank">Park Lab</a>'
   
   - name: "Chuck McCallum"
@@ -195,7 +195,7 @@ scc_team_members:
     link: http://lekschas.de
     more_info: '<a href="http://gehlenborglab.org" target="_blank">Gehlenborg Lab</a>'
       
-  - name: "Geoffrey Nelson"
+  - name: "Geoff Nelson"
     role: "HSCI Liaison"
     avatar: //static.projects.iq.harvard.edu/files/styles/profile_full/public/parklab/files/geoff.jpeg?m=1473437387&itok=5EFgCXdf
     link: https://compbio.hms.harvard.edu/people/geoff-nelson
