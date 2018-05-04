@@ -2,7 +2,7 @@
 title: "Publish"
 bg: brightblue
 color: white
-fa-icon: line-chart
+fa-icon: share-square-o
 collection : stem-cell-commons
 ---
 
