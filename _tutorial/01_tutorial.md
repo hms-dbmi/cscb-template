@@ -174,8 +174,8 @@ Note the expanded instructions associated with some steps of the tutorial that p
 1. To delete an analysis only, click the trash can icon in the *__Analyses__* panel on the *__Launch Pad__*. To delete a data set and all its associated analyses, click the trash can icon in the *__Data Sets__* panel on the *__Launch Pad__*
 ![Delete](screenshots/Delete_skitch.png)
 
-[refinery-sample-metadata.tsv]: https://beta.stemcellcommons.org/static/sample-files/refinery-sample-metadata.tsv
-[scc-home]: https://beta.stemcellcommons.org
+[refinery-sample-metadata.tsv]: https://scc-prod-static.s3.amazonaws.com/sample-files/refinery-sample-metadata.tsv
+[scc-home]: https://hsci.stemcellcommons.org
 [input.fastq]: http://data.cloud.refinery-platform.org.s3.amazonaws.com/data/tutorials/introduction/input.fastq
 [nanog.fastq]: http://data.cloud.refinery-platform.org.s3.amazonaws.com/data/tutorials/introduction/nanog.fastq
 [tutorial.tsv]: http://data.cloud.refinery-platform.org.s3.amazonaws.com/data/tutorials/introduction/tutorial.tsv
